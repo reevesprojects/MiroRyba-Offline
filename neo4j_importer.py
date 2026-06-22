@@ -37,7 +37,7 @@ def import_personas_to_neo4j(registry_path: Path, uri: str, user: str, password:
                 n.name = $region,
                 n.summary = $summary,
                 n.attributes_json = $attributes_json,
-                n.created_at = datetime().timezone('Z').toString()
+                n.created_at = toString(datetime())
             ON MATCH SET
                 n.summary = $summary,
                 n.attributes_json = $attributes_json
