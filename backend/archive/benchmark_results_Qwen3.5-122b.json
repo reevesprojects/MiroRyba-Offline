@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782066302.4261801,
+  "model": "qwen3.5-122b",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "1.30s",
+      "avg_tps": "33.1",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "1.16s",
+      "avg_tps": "75.1",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "5.27s",
+      "avg_tps": "86.3",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "1.09s",
+      "avg_tps": "90.6",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "The Czech is grammatically perfect and stylistically distinct for each character, with Tomáš using formal reformist rhetoric and Marie employing natural, emotionally charged colloquialisms without translation artifacts.",
+      "persona_consistency": "Both agents perfectly embody their defined profiles: Tomáš speaks as a data-driven liberal from Prague focused on systemic health benefits, while Marie argues from the immediate financial struggle of an Ostrava single mother prioritizing basic survival over abstract reforms.",
+      "interactive_coherence": "Marie's reply directly counters Tomáš's specific points about budget efficiency and healthy lifestyles by reframing them through her lived experience of poverty, creating a logical and emotionally resonant conflict."
+    },
+    "thread": {
+      "post": "🥤 Konečně krok správným směrem! Vláda oznámila daň ze slazených nápojů a to je vítaná reforma. Jako IT specialista vidím v datech jasnou korelaci: více cukru = vyšší obezita a větší zátěž pro zdravotní systém.\n\n💰 3 miliardy korun ročně, které půjdou do rozpočtu, by měly směřovat na prevenci a vzdělávání – to je efektivní využití zdrojů. Ano, ceny se mohou mírně změnit, ale zdravý životní styl a ochrana budoucích generací stojí za to. 🌱\n\nKritika potravinářské komory je očekávatelná, ale nesmíme nechat zdraví celé společnosti obětovat krátkodobým ziskům. Podpora reforem, které mají smysl, je nutnost. 💪🇨🇿\n\n#Zdraví #Reformy #Obezita #Praha #SustainableLiving #Daně",
+      "reply": "Tomáši, snad je vám dobře v Praze, ale pro nás samoživitele v Ostravě každé zdražení bolí. Když mám vybrat mezi zdravým životním stylem a tím, aby děti měly co do žaludku, volím to druhé. Vaše „efektivní využití zdrojů\" znamená pro mě jen méně peněz na nákupy. Neřešte nám vzdělávání, řešte raději ceny potravin, abychom se mohli najíst!"
+    },
+    "success": true
+  }
+}

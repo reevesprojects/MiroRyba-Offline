@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782059617.90698,
+  "model": "ministral-3:8b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "21.49s",
+      "avg_tps": "3.6",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "7.79s",
+      "avg_tps": "77.1",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "3.96s",
+      "avg_tps": "75.1",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "2.13s",
+      "avg_tps": "71.0",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 4,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "Výborně přirozená a kolokviální čeština, bez překladových chyb. Používání emojů, zkratek (#ZdravíNeNáhodou) a konkrétních příkladů (kolu na limonádu) odpovídá moderním sociálním médiím. Jazyková struktura je dynamická a přizpůsobena komunikačnímu stylu obou postav.",
+      "persona_consistency": "Oba agenti se drží svých profilů, ale s malými výkyvy: Tomáš zůstal věrný svému liberálnímu, analytickému přístupu (důraz na transparentnost a data), zatímco Marie vyjadřuje své ekonomické obavy a rodinné kontexty. Nicméně její reakce je o trochu *emocionálně* ostráji než by odpovídalo jejímu věku/pozici (např. „brát zbytečně ze sračky“ – i když to může být stylizováno jako lidový výraz).",
+      "interactive_coherence": "Marie reaguje na Tomášovy body, ale ne příliš logicky lineárně: odpovídá na jeho argumenty o účelu daní (3 miliard) a transparentnosti, ale vynechává přímou reakci na jeho klíčový bod – že peníze by měly jít do prevence. Jejím hlavním tématem je osobní zátěž pro rodinu, což je relevantní, ale méně zaměřené na politický diskurs Tomášova výchozího příspěvku."
+    },
+    "thread": {
+      "post": "**🍊 Podporuji daně na slazené nápoje – ale s důrazem na efektivitu! 💰**\n\nZdraví před penězi? V tomto případě asi ne. Daně za cukrovinky a slazené nápoje jsou **zdravý krok** (když jde o boj s obezitou a cukrovkou) – ale **rozhodující bude, kam půjde peníze**. 3 miliardy ročně by měly jít do prevence, školní výživy nebo podporu zdravého života, ne jen do „doplňkového rozpočtu“.\n\nDobře vidím kritikou spotřebitelů – ale **zdravé stravování nemůže být luxus**, a daně na cukr by měly za cíl **změnit chování**, nikoli jen vybrat další peníze. Věřím, že při správném záměru to může fungovat.\n\n**Poznámka pro politiky:** Ukažte, kam peníze půjdou! 🔍 #ZdravíNeNáhodou\n\n*(P.S.: IT specialistovi, co je v této věci nejdůležitější? **Transparentnost a data.** Čím více průkazných důkazů pro účinnost daně – tím lépe.)",
+      "reply": "**„Ahoj Tomáši, děkuji za názor – ale pro mě to zní jako další švihadlo s penězi.**\n\n3 miliardy jsou samozřejmě fajn na „prevenci“, až budu muset platit o 2–3 koruny vyšší kolu na limonádu nebo ovocné šťávy. Jak budou ty peníze *konkrétně* jít do mých dětí? Do kroužků, školního oběda nebo jen na to, abych si pořídila další zeleninu místo cukrového pečiva (které už tak moc nemůžu dovolit)?\n\nVím, že zdraví je důležité – ale když se zdražuje, co mám dělat? Vlastně stejné jako dnes: kupovat to levnější. A ono to není jen omalovánky na slazené nápoje, ale i celé rodinné menu. Transparentnost? Ano, ale *předem* bych viděla, jak zlevní něco jiného – nebo alespoň, že mi nebudou brát zbytečně ze sračky.\n\nNaše děti si zasluhují zdravý život i možnost mít pěkné věci – ale ne na úkor toho, co nám politici slibují. Až pak u"
+    },
+    "success": true
+  }
+}

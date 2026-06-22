@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782059221.554817,
+  "model": "gemma2:9b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "22.20s",
+      "avg_tps": "3.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "1.25s",
+      "avg_tps": "55.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "3.71s",
+      "avg_tps": "63.9",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "1.05s",
+      "avg_tps": "51.6",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech language and appropriate vocabulary for their respective personas.",
+      "persona_consistency": "Tomáš expresses liberal viewpoints and Marie reflects concerns common among working-class individuals facing economic pressures.",
+      "interactive_coherence": "Marie directly counters Tomáš's argument by highlighting the potential negative impact on lower-income families."
+    },
+    "thread": {
+      "post": "💪Dobrá zpráva! 🍾 Přidaná daň na slazené nápoje je krok správným směrem k boji proti obezitě a zároveň přinese peníze do rozpočtu pro důležité reformy. Jde o investici do zdraví naší společnosti! 👍 Ať už se někomu zdá, že je to drahé, zdraví má přednost. 💪 #zdravejstylzivota #obezita #reforma",
+      "reply": "Tomáši, vy to vidíte jednoduše, ale my obyčejní lidé si pak těžko vystačíme s penězma.  Zdraví je důležité, ale i jídlo a všemu ostatnímu se musí platit. A co když ten příplatek na těch nápojích bude takový, že si ho lidi už nemůžou dovolit? To by zas byla jiná \"investice\". 😓"
+    },
+    "success": true
+  }
+}

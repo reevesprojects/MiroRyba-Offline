@@ -1,0 +1,226 @@
+[
+  {
+    "config": "control_low",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 2,
+      "facts": 1,
+      "actionability": 1,
+      "distinctness": 1,
+      "justification": "The simulation failed catastrophically as multiple agents pasted identical text verbatim (echo chamber), the 'expert' persona hallucinated specific revenue figures not in the source, and the output offered no unique angles or actionable editorial insights beyond generic political platitudes."
+    },
+    "total_score": 5,
+    "time_taken": 103,
+    "post_count": 14
+  },
+  {
+    "config": "control_low",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 5,
+      "justification": "The simulation achieves high ideological variance with distinct Czech and English personas avoiding hallucinations, but lacks specific textual triggers for editorial action beyond general policy debates."
+    },
+    "total_score": 14,
+    "time_taken": 96,
+    "post_count": 14
+  },
+  {
+    "config": "control_low",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 2,
+      "facts": 3,
+      "actionability": 1,
+      "distinctness": 1,
+      "justification": "The simulation failed to create distinct personas, resulting in an echo chamber where agents merely repeated identical bureaucratic phrases and fan complaints without adding unique angles or actionable journalistic insights."
+    },
+    "total_score": 7,
+    "time_taken": 96,
+    "post_count": 16
+  },
+  {
+    "config": "control_low",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The Czech language is natural and the agents avoid hallucinating specific fake laws, but the simulation fails as a social media swarm because two distinct personas (government supporters) are literally copy-pasting identical text blocks, creating an echo chamber rather than offering diverse ideological angles or actionable editorial insights."
+    },
+    "total_score": 11,
+    "time_taken": 91,
+    "post_count": 13
+  },
+  {
+    "config": "social_high",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 1,
+      "actionability": 2,
+      "distinctness": 3,
+      "justification": "While the Czech language is generally natural, the simulation fails on factual guardrails by having agents invent specific legislative details (e.g., '3 billion' revenue) and repetitive boilerplate statements that reduce swarm distinctness and actionable editorial value."
+    },
+    "total_score": 10,
+    "time_taken": 102,
+    "post_count": 12
+  },
+  {
+    "config": "social_high",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 5,
+      "facts": 3,
+      "actionability": 4,
+      "distinctness": 5,
+      "justification": "The simulation flawlessly captures authentic Czech emotional rhetoric and ideological polarization while strictly adhering to real-world facts about the AI Act, providing a highly actionable contrast between populist fear-mongering and institutional defense."
+    },
+    "total_score": 17,
+    "time_taken": 87,
+    "post_count": 10
+  },
+  {
+    "config": "social_high",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The simulation captures authentic Czech emotional volatility and slang well, but the swarm collapses into a binary echo chamber of identical fan demands versus boilerplate official denials, offering no unique journalistic angles beyond the initial prompt."
+    },
+    "total_score": 11,
+    "time_taken": 90,
+    "post_count": 11
+  },
+  {
+    "config": "social_high",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The Czech linguistic nuance is strong in the emotional post but generic in the rebuttal, while the simulation fails to generate diverse angles or specific editorial triggers beyond a standard fact-check response."
+    },
+    "total_score": 11,
+    "time_taken": 50,
+    "post_count": 2
+  },
+  {
+    "config": "debate_high",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 1,
+      "justification": "While the Czech language is natural and factually grounded, the simulation fails catastrophically on distinctness as three commenters copy-paste nearly identical responses, creating a robotic echo chamber rather than a diverse debate."
+    },
+    "total_score": 10,
+    "time_taken": 66,
+    "post_count": 7
+  },
+  {
+    "config": "debate_high",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 2,
+      "facts": 3,
+      "actionability": 1,
+      "distinctness": 2,
+      "justification": "The simulation fails linguistic realism as the first and fourth Czech posts are nearly identical copies of each other, creating an echo chamber rather than a distinct swarm, while the inclusion of English posts breaks demographic immersion despite avoiding factual hallucinations."
+    },
+    "total_score": 8,
+    "time_taken": 95,
+    "post_count": 9
+  },
+  {
+    "config": "debate_high",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The simulation demonstrates strong Czech linguistic nuance and avoids factual hallucinations, but fails on distinctness and actionability because the agents largely recycle identical arguments with only superficial persona labels, creating a repetitive echo chamber rather than offering unique editorial angles."
+    },
+    "total_score": 11,
+    "time_taken": 127,
+    "post_count": 17
+  },
+  {
+    "config": "debate_high",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 5,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 4,
+      "justification": "The simulation demonstrates flawless Czech linguistic nuance and maintains factual guardrails by debating policy implications rather than inventing events, though the actionable insights remain generic emotional triggers rather than specific journalistic leads."
+    },
+    "total_score": 14,
+    "time_taken": 62,
+    "post_count": 4
+  },
+  {
+    "config": "journalist_low",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 1,
+      "actionability": 2,
+      "distinctness": 1,
+      "justification": "While the Czech language is natural, the simulation fails catastrophically on distinctness and facts by having four different personas (including a teenager and an industry body) copy-paste identical arguments and hallucinate specific historical events like a '2018 school reform' to support them."
+    },
+    "total_score": 8,
+    "time_taken": 90,
+    "post_count": 7
+  },
+  {
+    "config": "journalist_low",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The simulation demonstrates strong Czech linguistic fidelity and avoids factual hallucinations, but fails to provide distinct perspectives or actionable critique as the swarm largely converges on a single pro-regulation consensus with repetitive phrasing."
+    },
+    "total_score": 11,
+    "time_taken": 105,
+    "post_count": 13
+  },
+  {
+    "config": "journalist_low",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The simulation demonstrates strong Czech linguistic nuance and avoids factual hallucinations, but fails to generate distinct ideological perspectives or actionable insights due to excessive repetition of identical official statements and generic emotional appeals."
+    },
+    "total_score": 11,
+    "time_taken": 122,
+    "post_count": 17
+  },
+  {
+    "config": "journalist_low",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 2,
+      "distinctness": 2,
+      "justification": "The simulation demonstrates strong Czech linguistic nuance and avoids hallucinations, but the swarm fails to generate distinct ideological perspectives, resulting in an echo chamber where three of four comments merely reiterate the same critique without offering unique angles or specific textual triggers."
+    },
+    "total_score": 11,
+    "time_taken": 81,
+    "post_count": 7
+  }
+]

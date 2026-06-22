@@ -1,0 +1,31 @@
+{
+  "timestamp": 1781959712.5481997,
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/openai/",
+  "model": "gemini-3.1-flash-lite-preview",
+  "results": [
+    {
+      "workload_name": "NER & Relation Extraction (JSON)",
+      "avg_time": 2.082648992538452,
+      "avg_tps": 117.6386423625711,
+      "total_tokens": 245,
+      "json_pass_rate": "100%",
+      "status": "OK"
+    },
+    {
+      "workload_name": "Agent Persona Profile Generation",
+      "avg_time": 1.3781685829162598,
+      "avg_tps": 112.46809854859252,
+      "total_tokens": 155,
+      "json_pass_rate": "100%",
+      "status": "OK"
+    },
+    {
+      "workload_name": "Social Media Post Generation (Text)",
+      "avg_time": 0.7862534523010254,
+      "avg_tps": 82.67054320686667,
+      "total_tokens": 65,
+      "json_pass_rate": "N/A",
+      "status": "OK"
+    }
+  ]
+}

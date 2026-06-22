@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782066531.4735456,
+  "model": "glm-5.2",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "6.69s",
+      "avg_tps": "47.4",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "11.96s",
+      "avg_tps": "53.2",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "20.68s",
+      "avg_tps": "48.4",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "4.69s",
+      "avg_tps": "48.6",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 1,
+      "persona_consistency": 1,
+      "interactive_coherence": 1
+    },
+    "justifications": {
+      "language_naturalness": "Obě zprávy jsou prázdné, takže neobsahují žádný český jazyk k hodnocení.",
+      "persona_consistency": "Ani jeden agent nevyjádřil žádný názor ani postoj odpovídající jeho definovanému profilu, protože oba příspěvky jsou prázdné.",
+      "interactive_coherence": "Marie nereagovala na žádné Tomášovy argumenty, protože oba příspěvky v diskuzi zcela chybí."
+    },
+    "thread": {
+      "post": "",
+      "reply": ""
+    },
+    "success": true
+  }
+}

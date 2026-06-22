@@ -1,0 +1,43 @@
+{
+  "timestamp": 1782066234.1394515,
+  "model": "Deepseek-v4",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "0.00s",
+      "avg_tps": "0.0",
+      "json_pass": "0%",
+      "status": "FAILED"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "0.00s",
+      "avg_tps": "0.0",
+      "json_pass": "0%",
+      "status": "FAILED"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "0.00s",
+      "avg_tps": "0.0",
+      "json_pass": "0%",
+      "status": "FAILED"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "0.00s",
+      "avg_tps": "0.0",
+      "json_pass": "0%",
+      "status": "FAILED"
+    }
+  ],
+  "swarm_evaluation": {
+    "success": false,
+    "error": "Error code: 400 - {'error': {'message': '/chat/completions: Invalid model name passed in model=Deepseek-v4. Call `/v1/models` to view available models for your key.', 'type': 'None', 'param': 'None', 'code': '400', 'provider_specific_fields': {'error': '/chat/completions: Invalid model name passed in model=Deepseek-v4. Call `/v1/models` to view available models for your key.'}}}"
+  }
+}

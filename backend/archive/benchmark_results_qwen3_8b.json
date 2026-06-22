@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782059314.9281476,
+  "model": "qwen3:8b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "59.08s",
+      "avg_tps": "5.0",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "5.20s",
+      "avg_tps": "81.4",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "7.68s",
+      "avg_tps": "81.3",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "5.23s",
+      "avg_tps": "79.9",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "The Czech text is grammatically correct and uses natural phrasing consistent with colloquial speech.",
+      "persona_consistency": "Tomáš's message aligns with his profile as a liberal IT professional supporting government reforms, while Marie's empty reply maintains her persona as a self-employed seller concerned about rising costs.",
+      "interactive_coherence": "Although Marie's reply is empty, the thread setup logically positions her to address Tomáš's arguments about the tax's impact on consumers."
+    },
+    "thread": {
+      "post": "🌍💡 Nová daň na slazené nápoje? Vláda chce bojovat s obezitou a vydělá 3",
+      "reply": ""
+    },
+    "success": true
+  }
+}

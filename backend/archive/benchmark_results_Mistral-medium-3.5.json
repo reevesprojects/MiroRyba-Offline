@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782066354.1643245,
+  "model": "mistral-medium-3.5",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "3.57s",
+      "avg_tps": "17.6",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "3.44s",
+      "avg_tps": "20.7",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "17.03s",
+      "avg_tps": "21.7",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "2.73s",
+      "avg_tps": "20.5",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Czech is fluent, idiomatic, and free of translation artifacts, with appropriate use of colloquialisms (e.g., 'má to snadné mluvit', 'rána do rozpočtu').",
+      "persona_consistency": "Tomáš’s liberal, health-conscious stance and Marie’s budget-focused, skeptical perspective align perfectly with their defined profiles and socio-economic contexts.",
+      "interactive_coherence": "Marie’s reply directly counters Tomáš’s optimism by highlighting the practical financial burden, logically addressing his health and budget arguments."
+    },
+    "thread": {
+      "post": "Zdá se, že vláda konečně dělá něco pro naše zdraví! 💪 Dodatečná daň na slazené nápoje je krok správným směrem – nejenže bojujeme s obezitou, ale navíc to přinese peníze do rozpočtu. Opozice a potravinářská komora samozřejmě protestují, ale zdraví občanů by mělo být prioritou. #ZdravýŽivotníStyl #ReformyProBudoucnost",
+      "reply": "\"Tomáši, ty to máš snadné mluvit z Prahy! Pro mě jako samoživitelku je každé zdražení rána do rozpočtu. Moje děti pijí občas limcu a teď to budu muset ještě víc šetřit. Zdraví je důležité, ale co máme jíst, když všeho bude víc a víc draho? #RealitaJeJiná\""
+    },
+    "success": true
+  }
+}

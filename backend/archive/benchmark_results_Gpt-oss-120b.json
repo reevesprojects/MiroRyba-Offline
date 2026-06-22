@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782066416.8830423,
+  "model": "gpt-oss-120b",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "1.01s",
+      "avg_tps": "78.0",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "6.45s",
+      "avg_tps": "33.5",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "26.71s",
+      "avg_tps": "37.4",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "15.44s",
+      "avg_tps": "33.9",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "The Czech is grammatically correct, uses appropriate colloquial expressions and emojis without any translation‑like awkwardness.",
+      "persona_consistency": "Tomáš speaks like a liberal, tech‑savvy urbanite focused on health and ecology, while Marie expresses the concerns of a low‑income single mother, matching their profiles.",
+      "interactive_coherence": "Marie directly responds to Tomáš’s points about the tax’s impact on poorer families and calls for concrete support, keeping the discussion logically connected."
+    },
+    "thread": {
+      "post": "💡 **Nová daň na slazené nápoje – dobrý krok, ale pozor na dopad!**  \n\nVčerejší oznámení vlády o 3 mld. Kč ročně z dodatečné spotřební daně na sladké nápoje mě těší. Přispěje to k boji s obezitou a podpoří zdravější volby – přesně to, co potřebujeme v našem rychlém digitálním světě.  \n\n✅ **Pro:**  \n- motivace ke snížení konzumace cukru, což je výhra pro naše zdraví i zdravotnický rozpočet,  \n- peníze mohou financovat preventivní programy a podporu sportu,  \n- menší poptávka po plastových lahvích → menší ekologický dopad.  \n\n⚠️ **Proti:**  \n- riziko, že cena vyššího cukru přenese břemeno hlavně na rodiny s nižšími příjmy,  \n- nutnost doplnit daň o cíl‑orientované programy (vzdělávání, dostupné alternativy),  \n- možná reakce potravinářské komory – je potřeba transparentního dialogu.",
+      "reply": "Tomáši, chápu, že záměr je dobrý, ale pro nás, kdo už teď těžko skládáme rozpočet, bude další koruna za limonádu těžko snesitelná. Daň může pomoci, jen když se hned neodloží na nás, kteří mají nejmenší možnosti. Potřebujeme konkrétní podporu – dotace na zdravé alternativy a vzdělávací programy ve školách, ne jen sliby. Jinak se z toho stane další zátěž pro rodiny jako moje."
+    },
+    "success": true
+  }
+}

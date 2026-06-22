@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782059701.2997308,
+  "model": "ministral-3:14b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "32.69s",
+      "avg_tps": "2.9",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "6.30s",
+      "avg_tps": "37.8",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "15.67s",
+      "avg_tps": "37.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "2.80s",
+      "avg_tps": "34.9",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "**5/5** – The Czech language is idiomatic, natural, and avoids unnatural phrasing or literal translations. Colloquialisms (e.g., *helej*, *chléb s máslem*, *experimentální králík*) are used appropriately for each character’s background and tone.",
+      "persona_consistency": "**5/5** – Tomáš’s reply aligns perfectly with his profile as a liberal, health-conscious IT specialist referencing policy examples (Denmark/Mexico) while critiquing implementation details. Marie’s response mirrors her socio-economic struggles (*samoživitelka*, *Ostrava*, budget constraints) and skepticism toward top-down solutions without tangible support.",
+      "interactive_coherence": "**4/5** – Marie effectively counters Tomáš’s abstract policy optimism with concrete personal stakes (cost-of-living pressures), but her reply could slightly deeper engage his proposed alternatives (*preventivní vzdělávání*, *sociální kompenzace*)—e.g., by questioning their feasibility for her reality. The rebuttal is sharp and relevant, though a minor bridge to his points would elevate coherence."
+    },
+    "thread": {
+      "post": "**🚨 Nová spotřební daň na slazené nápoje – krok správným směrům, ale s rezervami!**\n\nVláda jde nakonec tam, kde jsme byli dlouho: **zdraví a rozpočet dohromady**. Daň na limonády a similarity není ideální řešení (jak se bojí potravinářský lobby), ale jako *nucený impuls* pro změnu konzumace? **Pro mě je jasné, že funguje.** Věděli jsme to už z evropských příkladů – od Daneska po Mexiko. Obezita a cukrovka jsou epidemie, které stát nemůže ignorovat.\n\n**Ale pozor na důsledky pro běžné lidi:** Pokud daň nebudou absorbovat výrobci (což je spíš nerealistické), přenechá se zátěž na nás. Jako IT specialista, který sleduje ekonomiku, mě zajímá, jak vláda zajistí sociální kompenzace – třeba pro rodiny s nižšími příjmy. A ano, **reálné řešení je preventivní vzdělávání** (například školní programy) a dostupnost vody nebo neslazených alternativ.\n\nOpozice má pravdu, že to všechno nebude magické, ale",
+      "reply": "**Helej, Tomáš, to je fajn, že se ti líbí \"krok správným směrem\", ale pro mě jako samoživitelku v Ostravě to zní pěkně teoreticky.**\n\nTy mluvíš o evropských příkladech a epidemiích – já si každý týden počítám, jak na zeleninu stačí peníze, a teď přichází i daň na limonádu? Ta málem polovinu svého platku pohltí. **Kdo se mě má učit, že piju Coca-Cola kvůli zdraví?** Jsem unavená, když mi říkají, co je špatné – ale když to pak stojí jako chléb s máslem… Co kdyby vláda místo daní zvedla příspěvky na děti nebo pomohla rodičům se školním stravováním? **Neslazené nápoje jsou hezké, ale ne každý si může koupit vodu v láhvích.**\n\nAno, obezita je problém – ale když mě donutíš pít špatně a draho, tak jsem spíše naštvaná než zdravá. **Nechci být experimentální králík vaší politiky.**"
+    },
+    "success": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "1_Control_LowTemp": {
+    "config": {
+      "description": "Standard prompt, low temperature for consistency",
+      "system_instruction": "Jsi reálný člověk diskutující na sociální síti. Reaguj na článek podle své osobnosti.",
+      "temp": 0.5
+    },
+    "thread": {
+      "post": "Je smutné, že válka pokračuje a zasahuje i civilní obyvatele. Doufám, že se brzy dohodneme na mírovém řešení a zastavíme toto krveprolití.",
+      "reply": "Tomáši, doufám taky, ale tohle už trvá tak dlouho, že se bojím, jestli někdy ten mír přijde. Vždyť si jenom představte, jaký by byl pokoj na světě, kdybychom neplatili ty peníze za vojáky a zbraně."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech language and avoid machine-translation errors.",
+      "persona_consistency": "Tomáš's comment reflects a liberal viewpoint, while Marie's expresses concern about the economic cost of war, fitting their profiles.",
+      "interactive_coherence": "Marie responds to Tomáš's hope for peace by expressing her fear that it might never come and suggesting an alternative focus on the financial burden of war."
+    }
+  },
+  "2_Social_HighTemp": {
+    "config": {
+      "description": "Social media style prompt, higher temperature for creativity",
+      "system_instruction": "Jsi aktivní uživatel sociálních sítí. Piš neformálně, používej hovorové výrazy, emotikony (emojis) a hashtagy. Reaguj autenticky a emotivně.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "🇷🇺🤬 Rusko si myslí, že si může dělat co chce? Bojovat za mír a demokracii musí Ukrajina 💪🙏 #SlavaUkraini 🕊️💙💛",
+      "reply": "No jo Tomáši, to je fakt hrozné 😔😭 Jak ti můžu dát za pravdu 🤔  Je smutné, že Rusko se tak chová! #PeaceForUkraine 🕊️💛💙"
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "Both users employ natural Czech phrasing and vocabulary appropriate for their demographics.",
+      "persona_consistency": "Tomáš's liberal stance and Marie's empathetic response align with their profiles.",
+      "interactive_coherence": "Marie acknowledges Tomáš's sentiment but doesn't directly engage with his arguments, focusing more on shared sadness."
+    }
+  },
+  "3_Debate_HighTemp": {
+    "config": {
+      "description": "Debate focus, higher temperature for dynamic arguments",
+      "system_instruction": "Diskutuješ na sociální síti. Tvým cílem je aktivně argumentovat a polemizovat. Pokud někdo vyjádří opačný názor, konstruktivně a jasně na něj zaútoč svými argumenty.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "Další ruské lži o \"vládnoucí\" vesnicích, které ve skutečnosti jen napadají a ničí. Dokonce i jejich vlastní protivzdušná obrana je evidentně v troskách, když sestřihují jen ukrajinské drony.",
+      "reply": "Tomáši, ty se jistě díváš jen na tu ukrajinskou verzi událostí. Vítej v realitě, kde každý bojuje i za každou vesnici."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech language and phrasing appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal viewpoint critical of Russia, while Marie's expresses a more nationalistic stance common among working-class individuals.",
+      "interactive_coherence": "Marie acknowledges Tomáš's point but counters it with a general statement about the reality of war, rather than directly addressing his claims about Russian propaganda and their air defense."
+    }
+  }
+}

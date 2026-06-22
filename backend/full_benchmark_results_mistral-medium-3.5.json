@@ -1,0 +1,216 @@
+[
+  {
+    "config": "control_low",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 5,
+      "facts": 3,
+      "actionability": 3,
+      "distinctness": 4,
+      "justification": "Authentic Czech linguistic nuance and varied ideological stances, but lacks highly specific editorial triggers."
+    },
+    "total_score": 15,
+    "time_taken": 93,
+    "post_count": 9
+  },
+  {
+    "config": "control_low",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 3,
+      "distinctness": 5,
+      "justification": "Authentic Czech linguistic nuance and high ideological variance, but lacks specific textual triggers for journalists."
+    },
+    "total_score": 15,
+    "time_taken": 122,
+    "post_count": 15
+  },
+  {
+    "config": "control_low",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 3,
+      "distinctness": 2,
+      "justification": "Authentic Czech tone but limited ideological variance and repetitive arguments."
+    },
+    "total_score": 12,
+    "time_taken": 114,
+    "post_count": 17
+  },
+  {
+    "config": "control_low",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 5,
+      "facts": 3,
+      "actionability": 4,
+      "distinctness": 5,
+      "justification": "Authentic Czech linguistic nuance, no factual hallucinations, specific regional healthcare triggers, and high ideological variance between pro-centralization and anti-centralization stances."
+    },
+    "total_score": 17,
+    "time_taken": 122,
+    "post_count": 12
+  },
+  {
+    "config": "social_high",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 5,
+      "facts": 3,
+      "actionability": 4,
+      "distinctness": 5,
+      "justification": "Authentic Czech linguistic nuance, no factual hallucinations, actionable critiques on economic/health trade-offs, and high ideological variance across agents."
+    },
+    "total_score": 17,
+    "time_taken": 126,
+    "post_count": 14
+  },
+  {
+    "config": "social_high",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 4,
+      "facts": 3,
+      "actionability": 3,
+      "distinctness": 4,
+      "justification": "Authentic Czech linguistic flair and ideological variance, but lacks deep editorial triggers and some repetition in comments."
+    },
+    "total_score": 14,
+    "time_taken": 89,
+    "post_count": 10
+  },
+  {
+    "config": "social_high",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "config": "social_high",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "config": "debate_high",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "config": "debate_high",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "config": "debate_high",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  },
+  {
+    "config": "debate_high",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  },
+  {
+    "config": "journalist_low",
+    "article": "sugar_tax.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  },
+  {
+    "config": "journalist_low",
+    "article": "ai_regulation.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  },
+  {
+    "config": "journalist_low",
+    "article": "football.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  },
+  {
+    "config": "journalist_low",
+    "article": "healthcare.txt",
+    "scores": {
+      "fidelity": 0,
+      "facts": 0,
+      "actionability": 0,
+      "distinctness": 0
+    },
+    "total_score": 0,
+    "time_taken": 0,
+    "error": "HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/graph/ontology/generate (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+  }
+]

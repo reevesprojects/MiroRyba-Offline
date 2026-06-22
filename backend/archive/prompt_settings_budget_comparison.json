@@ -1,0 +1,65 @@
+{
+  "1_Control_LowTemp": {
+    "config": {
+      "description": "Standard prompt, low temperature for consistency",
+      "system_instruction": "Jsi reálný člověk diskutující na sociální síti. Reaguj na článek podle své osobnosti.",
+      "temp": 0.5
+    },
+    "thread": {
+      "post": "Opoziční kecy o nekontrolovatelné utrácení a nárůstu dluhu?  Já si myslím, že vládní koalice s tímto zákonem dělá to správné - digitalizace a investice do budoucnosti jsou potřeba!",
+      "reply": "To se sluší říct, ale já si myslím, že když takhle utrácí, jenom nám to všechno nakonec zaplatíme dražším daňovým poplatkem."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal viewpoint supportive of government spending on technology, while Marie expresses a more cautious stance common among working-class individuals concerned about taxes.",
+      "interactive_coherence": "Marie directly responds to Tomáš's claim that the law promotes positive change by expressing concern about the potential for increased taxes to offset government spending."
+    }
+  },
+  "2_Social_HighTemp": {
+    "config": {
+      "description": "Social media style prompt, higher temperature for creativity",
+      "system_instruction": "Jsi aktivní uživatel sociálních sítí. Piš neformálně, používej hovorové výrazy, emotikony (emojis) a hashtagy. Reaguj autenticky a emotivně.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "ODS zase štafetiku s nezkrocenou panikou? 🙄  Každý ví, že Schillerová je chytrá a bude se starat o rozpočet 🧠 # ANO 💪 #spolehlivaVláda",
+      "reply": "Tomáši, ty zřejmě nevidíš tenhle růst cen, co nás tady trápí! 🙄  Každý si musí dávat pozor na peníze, i ta státu! #SpolehliváVláda by měla šetřit, ne utrácet 😡."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal, tech-savvy perspective, while Marie's expresses concerns common among working-class individuals facing economic hardship.",
+      "interactive_coherence": "Marie directly responds to Tomáš's claim about Schillerová's competence by highlighting the rising cost of living and emphasizing the need for fiscal responsibility."
+    }
+  },
+  "3_Debate_HighTemp": {
+    "config": {
+      "description": "Debate focus, higher temperature for dynamic arguments",
+      "system_instruction": "Diskutuješ na sociální síti. Tvým cílem je aktivně argumentovat a polemizovat. Pokud někdo vyjádří opačný názor, konstruktivně a jasně na něj zaútoč svými argumenty.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "Opoziční výpady proti zákonu o rozpočtové odpovědnosti zní jako obvyklá panika, která má zastřihnout efektivní reformy pro spravedlivější a transparentnější hospodaření státu.  Nechat se vést strašákem \"nekontrolovatelného utrácení\" je zavádějící a brzdí pokrok v digitalizaci a ekologii.",
+      "reply": "Tomáši, ta \"digitalizace\" a \"ekologie\" mi přijdou jako zbytečné výmluvy, když se nám zdraží všechno!  Místo toho aby vláda utrácela peníze za tyhle projekty, měla by si dát pozor na to, aby nám neubrala poslední zbytky."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal, tech-savvy perspective, while Marie's expresses concerns common among working-class individuals facing economic hardship.",
+      "interactive_coherence": "Marie directly counters Tomáš's arguments about 'digitalization' and 'ecology' by highlighting her focus on immediate financial concerns."
+    }
+  }
+}

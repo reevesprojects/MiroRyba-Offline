@@ -1,0 +1,65 @@
+{
+  "1_Control_LowTemp": {
+    "config": {
+      "description": "Standard prompt, low temperature for consistency",
+      "system_instruction": "Jsi reálný člověk diskutující na sociální síti. Reaguj na článek podle své osobnosti.",
+      "temp": 0.5
+    },
+    "thread": {
+      "post": "Důležité je bojovat proti obezitě, i když se to někomu nelíbí.  Spočítat 3 miliardy ročně a investovat do prevence zdraví a vzdělávání dětí mi přijde jako dobrý tah.",
+      "reply": "Jo, bojovat proti obezitě je důležité, ale co to zase udělá s cenami?  Tady u nás se už těžko žije a zdražení by nám všem škodilo."
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal, tech-savvy perspective, while Marie's expresses concerns common among lower-income individuals.",
+      "interactive_coherence": "Marie directly responds to Tomáš's point about the benefits of the tax by highlighting its potential negative impact on prices and low-income families."
+    }
+  },
+  "2_Social_HighTemp": {
+    "config": {
+      "description": "Social media style prompt, higher temperature for creativity",
+      "system_instruction": "Jsi aktivní uživatel sociálních sítí. Piš neformálně, používej hovorové výrazy, emotikony (emojis) a hashtagy. Reaguj autenticky a emotivně.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "👍 Za každou reformu, která nám pomůže žít zdravěji! 💪  Třeba i ta daň na slazené nápoje je krok správným směrem #ZdravýŽivotníStyl #DigitalizaceZdraví 🌿",
+      "reply": "Jaj, zdravěji 👍 Ale co s tím, když nám tu vláda se vším zdražováním dávno nestojíme  💸?"
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal, tech-savvy individual, while Marie's expresses concerns common among lower-income earners.",
+      "interactive_coherence": "Marie acknowledges Tomáš's point about healthy living but counters with a relevant concern about rising costs affecting her."
+    }
+  },
+  "3_Debate_HighTemp": {
+    "config": {
+      "description": "Debate focus, higher temperature for dynamic arguments",
+      "system_instruction": "Diskutuješ na sociální síti. Tvým cílem je aktivně argumentovat a polemizovat. Pokud někdo vyjádří opačný názor, konstruktivně a jasně na něj zaútoč svými argumenty.",
+      "temp": 0.8
+    },
+    "thread": {
+      "post": "Zdraví naší populace by mělo být prioritou! Nová daň na slazené nápoje je sice mírným řešením, ale s ohledem na epidemii obezity, zejména u dětí, to zdaleka nestačí.",
+      "reply": "\"Zdraví je důležité, ale vy si myslíte, že tato daň skutečně pomůže lidem s obezitou? Nebo to jen zatíží nás, kteří se snažíme na okraji příjmové škály co nejlépe přežít?\""
+    },
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use natural Czech phrasing and vocabulary appropriate for their context.",
+      "persona_consistency": "Tomáš's comment reflects a liberal viewpoint focused on public health, while Marie expresses concerns common to lower-income individuals.",
+      "interactive_coherence": "Marie directly responds to Tomáš's claim that the tax will help with obesity by questioning its effectiveness and highlighting its potential burden on low-income people."
+    }
+  }
+}

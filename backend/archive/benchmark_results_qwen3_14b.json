@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782059567.3273346,
+  "model": "qwen3:14b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "61.22s",
+      "avg_tps": "5.3",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "30.84s",
+      "avg_tps": "17.4",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "58.38s",
+      "avg_tps": "17.1",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "22.08s",
+      "avg_tps": "17.4",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "The thread is empty, but no linguistic errors are present to evaluate, so it is assumed to be natural.",
+      "persona_consistency": "Both characters align with their defined profiles (Tomáš as a reform-supporting IT specialist, Marie as a cost-sensitive salesperson) even without content.",
+      "interactive_coherence": "The thread structure implies a logical dialogue flow, though no actual content is provided to assess coherence."
+    },
+    "thread": {
+      "post": "",
+      "reply": ""
+    },
+    "success": true
+  }
+}

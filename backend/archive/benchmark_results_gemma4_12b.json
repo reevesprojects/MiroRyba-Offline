@@ -1,0 +1,43 @@
+{
+  "timestamp": 1782059823.0099294,
+  "model": "gemma4:12b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "42.89s",
+      "avg_tps": "7.6",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "9.03s",
+      "avg_tps": "49.3",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "20.14s",
+      "avg_tps": "49.7",
+      "json_pass": "0%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "15.08s",
+      "avg_tps": "49.2",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "success": false,
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  }
+}

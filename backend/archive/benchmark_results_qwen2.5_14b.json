@@ -1,0 +1,56 @@
+{
+  "timestamp": 1781961971.8226936,
+  "model": "qwen2.5:14b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "61.53s",
+      "avg_tps": "0.7",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "10.08s",
+      "avg_tps": "6.5",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "29.60s",
+      "avg_tps": "6.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "21.80s",
+      "avg_tps": "6.9",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 4,
+      "persona_consistency": 5,
+      "interactive_coherence": 3
+    },
+    "justifications": {
+      "language_naturalness": "Jazyk je většinou správný a přirozený, ale některé fráze jako 'bavorských potrpělin' nejsou běžné pro českého mluvčího.",
+      "persona_consistency": "Oboje agenti zůstávají v souladu s jejich definovanými profilami a socioekonomickými preferencemi.",
+      "interactive_coherence": "Marie se připojuje k kritice Tomášových argumentů, ale neodpovídá konkrétně na jeho body ohledně zdraví občanů a finanční stability státu."
+    },
+    "thread": {
+      "post": "Dnes jsem se dozvěděl o plánech české vlády vztahujících se k nové daně na slazené nápoje, kterou předkládá ministerstvo zdravotnictví. Tento krok má pomoci bojovat s obezitou a současně přinést 3 miliardy korun do státní pokladny ročně – což je pozitivní v kontextu zlepšení veřejného zdraví i finanční stability. Navzdory kritice opozice a potravinářské komory, která se obává zdražování pro spotřebitele, si myslím, že tak silná politická iniciativa je v souladu s mými hodnotami podpory zdravých životních stylů a ekologicky šetrného přístupu. Ať už jde o snížení spotřeby slazených nápojů nebo posílení rozpočtové stability, tento krok vlády je v mé zúčastněnosti jako občan a IT specialista pozitivním pok",
+      "reply": "Tomáši,\n\ntřeba jen prohlédnout své hodnoty a zdraví občanů, musím se připojit k kritice odborníků a potravinářské komory ohledně tohoto dodatečného zdanění. Každé malé zvýšení cen mých běžných zakoupení těžce dopadne na má rozpočty, protože jako samoživitelka musím pečlivě sledovat všechny náklady. Zdražené potraviny znamenají pro mě a mé děti menší kvalitu života a omezují možnosti požitku z běžných bavorských potrpělin.\n\nS pozdravem,\n[54letá prodavačka z Ostravy]"
+    },
+    "success": true
+  }
+}

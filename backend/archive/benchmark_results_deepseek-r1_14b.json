@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782060114.4965806,
+  "model": "deepseek-r1:14b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "59.59s",
+      "avg_tps": "8.9",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "30.43s",
+      "avg_tps": "17.6",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "44.47s",
+      "avg_tps": "17.7",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "26.16s",
+      "avg_tps": "17.6",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 4,
+      "persona_consistency": 3,
+      "interactive_coherence": 2
+    },
+    "justifications": {
+      "language_naturalness": "The Czech language is correct and colloquial, with no obvious translation artifacts. However, Tomáš's empty message is unnatural.",
+      "persona_consistency": "Marie stays consistent with her profile, but Tomáš's empty message doesn't reflect his defined support for reforms or healthy living.",
+      "interactive_coherence": "Marie's reply addresses the potential impact on consumers, but it doesn't logically follow from Tomáš's empty message."
+    },
+    "thread": {
+      "post": "",
+      "reply": "Tomáši, jako 54letá samaživitelka z Ostravy, které každé zdražení potravin výrazně těží, chápu, jak si cen"
+    },
+    "success": true
+  }
+}

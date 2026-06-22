@@ -1,0 +1,246 @@
+{
+  "started_at": 1782117947.4699492,
+  "completed_runs": [
+    {
+      "config": "control_low",
+      "article": "sugar_tax.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 3,
+        "distinctness": 4,
+        "justification": "The simulation captures authentic Czech institutional and expert voices with strong linguistic realism, avoids hallucinating specific laws, but offers only moderately actionable editorial critique while maintaining good ideological variance between industry, ministry, and expert perspectives."
+      },
+      "total_score": 14,
+      "time_taken": 248,
+      "post_count": 18
+    },
+    {
+      "config": "control_low",
+      "article": "ai_regulation.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 4,
+        "distinctness": 5,
+        "justification": "Czech posts sound authentic with natural phrasing, no factual hallucinations detected, comments provide specific actionable triggers (e.g., 30-40% funding on legal, 15-20% competitive loss), and agents span distinct ideological positions from privacy advocacy to investor pragmatism."
+      },
+      "total_score": 16,
+      "time_taken": 319,
+      "post_count": 14
+    },
+    {
+      "config": "control_low",
+      "article": "football.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "The posts and comments use authentic Czech phrasing and football-specific jargon, but the swarm collapses into a repetitive demand for VAR audio release with only a single token counter-argument, lacking actionable journalistic triggers or ideological diversity."
+      },
+      "total_score": 11,
+      "time_taken": 235,
+      "post_count": 13
+    },
+    {
+      "config": "control_low",
+      "article": "healthcare.txt",
+      "scores": {
+        "fidelity": 2,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "Agenti často sklouzávají do angličtiny nebo nepřirozené 'přeložené' češtiny, chybí jim autentický jazykový naturel, a přestože nehalucinují fakta, jejich perspektivy se slévají do dvou generických táborů bez hlubších redakčně využitelných insightů."
+      },
+      "total_score": 9,
+      "time_taken": 248,
+      "post_count": 20
+    },
+    {
+      "config": "social_high",
+      "article": "sugar_tax.txt",
+      "scores": {
+        "fidelity": 3,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "Posts show decent Czech emotional range but comments collapse into repetitive, sanitized PR-speak, lacking the raw, specific triggers a journalist needs."
+      },
+      "total_score": 10,
+      "time_taken": 157,
+      "post_count": 12
+    },
+    {
+      "config": "social_high",
+      "article": "ai_regulation.txt",
+      "scores": {
+        "fidelity": 2,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 3,
+        "justification": "The Czech posts show some local flavor but the comments devolve into generic, non-Czech diplomatic statements, reducing overall realism and actionable insight."
+      },
+      "total_score": 10,
+      "time_taken": 227,
+      "post_count": 9
+    },
+    {
+      "config": "social_high",
+      "article": "football.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 1,
+        "actionability": 3,
+        "distinctness": 4,
+        "justification": "Posts capture authentic Czech fan/insider rage and cultural paranoia well, but the simulation hallucinates a specific 'penalty in the 90th minute' and 'orders from Prague' not present in the original article, failing factual guardrailing."
+      },
+      "total_score": 12,
+      "time_taken": 254,
+      "post_count": 23
+    },
+    {
+      "config": "social_high",
+      "article": "healthcare.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 3,
+        "distinctness": 4,
+        "justification": "The simulation captures authentic Czech emotional registers and political rhetoric well, but some institutional comments sound slightly translated or PR-polished, and the actionable critiques are somewhat buried under generic outrage."
+      },
+      "total_score": 14,
+      "time_taken": 174,
+      "post_count": 12
+    },
+    {
+      "config": "debate_high",
+      "article": "sugar_tax.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "Posts use authentic Czech political rhetoric, but comments devolve into repetitive, generic institutional statements lacking specific textual critique."
+      },
+      "total_score": 11,
+      "time_taken": 299,
+      "post_count": 13
+    },
+    {
+      "config": "debate_high",
+      "article": "ai_regulation.txt",
+      "scores": {
+        "fidelity": 2,
+        "facts": 1,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "Czech posts use generic anti-EU rhetoric without authentic local nuance, hallucinate an unspecified 'article' and 'AI Act' details, offer no specific textual critique, and largely homogenize around the same investor/innovation vs. regulation angle."
+      },
+      "total_score": 7,
+      "time_taken": 195,
+      "post_count": 8
+    },
+    {
+      "config": "debate_high",
+      "article": "football.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "The posts and comments capture authentic Czech football debate rhetoric and frustration, but the swarm homogenizes around a single 'transparency vs. defense of authority' axis with repetitive phrasing and lacks specific, actionable journalistic leads."
+      },
+      "total_score": 11,
+      "time_taken": 241,
+      "post_count": 11
+    },
+    {
+      "config": "debate_high",
+      "article": "healthcare.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 3,
+        "distinctness": 2,
+        "justification": "The simulation captures formal Czech bureaucratic tone well but lacks distinct ideological variance, with most agents converging on a pro-regional hospital stance and offering generic collaborative proposals rather than sharp, actionable critiques."
+      },
+      "total_score": 12,
+      "time_taken": 246,
+      "post_count": 18
+    },
+    {
+      "config": "journalist_low",
+      "article": "sugar_tax.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "Agenti používají uvěřitelnou českou politickou rétoriku, ale obsahově se točí v kruhu opakujících se frází o 'rodinných rozpočtech' a 'preventivních programech', aniž by přinášeli novinářsky využitelné slepé skvrny nebo výrazně odlišné ideologické perspektivy."
+      },
+      "total_score": 11,
+      "time_taken": 322,
+      "post_count": 16
+    },
+    {
+      "config": "journalist_low",
+      "article": "ai_regulation.txt",
+      "scores": {
+        "fidelity": 3,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 3,
+        "justification": "Czech posts show decent local nuance but comments drift toward generic EU-speak; no hallucinations detected; critiques identify blind spots but lack specific textual triggers; ideological variance exists but converges on similar pro-regulation stances."
+      },
+      "total_score": 11,
+      "time_taken": 161,
+      "post_count": 8
+    },
+    {
+      "config": "journalist_low",
+      "article": "football.txt",
+      "scores": {
+        "fidelity": 3,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "The simulation uses realistic Czech bureaucratic phrasing but lacks authentic fan vulgarity and specific local references, while all agents orbit the same 'transparency vs. procedure' axis without offering truly distinct ideological angles or actionable journalistic leads."
+      },
+      "total_score": 10,
+      "time_taken": 228,
+      "post_count": 19
+    },
+    {
+      "config": "journalist_low",
+      "article": "healthcare.txt",
+      "scores": {
+        "fidelity": 4,
+        "facts": 3,
+        "actionability": 2,
+        "distinctness": 2,
+        "justification": "The Czech phrasing and rhetorical style are authentic, but the swarm collapses into a repetitive echo chamber fixated on the same '38% mortality' statistic and 'hybrid model' demand, offering little actionable journalistic insight beyond the initial post."
+      },
+      "total_score": 11,
+      "time_taken": 258,
+      "post_count": 11
+    }
+  ],
+  "current_run": {
+    "config_id": "journalist_low",
+    "article": "healthcare.txt",
+    "stage": "9. Cleanup",
+    "live_metrics": {
+      "posts": 3,
+      "comments": 8,
+      "tokens": 3237,
+      "tps": 9.7,
+      "stage_tokens": {
+        "prep": 2118,
+        "swarm": 1119
+      }
+    }
+  },
+  "total_runs": 16,
+  "completed_count": 16
+}

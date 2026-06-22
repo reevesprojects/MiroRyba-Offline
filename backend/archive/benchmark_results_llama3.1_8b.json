@@ -1,0 +1,56 @@
+{
+  "timestamp": 1781962210.4888568,
+  "model": "llama3.1:8b",
+  "endpoint": "http://localhost:11434/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "17.71s",
+      "avg_tps": "3.7",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "1.17s",
+      "avg_tps": "64.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "3.30s",
+      "avg_tps": "66.9",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "1.22s",
+      "avg_tps": "63.0",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 4
+    },
+    "justifications": {
+      "language_naturalness": "The Czech language is correct, colloquial and free of literal translation artifacts.",
+      "persona_consistency": "Tomáš stays fully in character as a liberal IT specialist from Prague, supporting government reforms, while Marie's response aligns with her profile as a 54-year-old Ostrava-based shop assistant struggling financially.",
+      "interactive_coherence": "Marie's reply addresses Tomáš's optimism but could be more directly critical of his argument that the tax will help combat obesity and bring in revenue."
+    },
+    "thread": {
+      "post": "\"Zdařilý krok vlády! Dodatečná daň na sladké nápoje může opravdu pomoci boji proti obezitě a přinese navíc 3 miliardy korun do rozpočtu. Jsem rád, že se vláda o naše zdraví a finance ujala.\"",
+      "reply": "\"Tomáše, vím, že se snažíte být optimističtí, ale věřte nebo ne, pro lidi jako já zdražování potravin není žádná vítězství. Každé další zvýšení cen je pro nás obrovským zátěží a málokdy se nám daří uhradit i nejzákladnější potřeby.\""
+    },
+    "success": true
+  }
+}

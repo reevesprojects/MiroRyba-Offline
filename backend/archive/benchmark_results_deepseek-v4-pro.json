@@ -1,0 +1,56 @@
+{
+  "timestamp": 1782066449.9677594,
+  "model": "deepseek-v4-pro",
+  "endpoint": "https://llm.ai.e-infra.cz/v1",
+  "workloads": [
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English NER Extraction (JSON)",
+      "avg_time": "1.74s",
+      "avg_tps": "27.6",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Technical Mechanics",
+      "workload_name": "English Persona Generation (JSON)",
+      "avg_time": "2.08s",
+      "avg_tps": "40.9",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech NER & Relation Extraction (JSON)",
+      "avg_time": "10.85s",
+      "avg_tps": "44.8",
+      "json_pass": "100%",
+      "status": "OK"
+    },
+    {
+      "category": "Czech Domain",
+      "workload_name": "Czech Demographic Post Generation (Text)",
+      "avg_time": "1.35s",
+      "avg_tps": "35.5",
+      "json_pass": "N/A",
+      "status": "OK"
+    }
+  ],
+  "swarm_evaluation": {
+    "scores": {
+      "language_naturalness": 5,
+      "persona_consistency": 5,
+      "interactive_coherence": 5
+    },
+    "justifications": {
+      "language_naturalness": "Both comments use authentic, colloquial Czech with natural phrasing, emotional tone, and no signs of translation artifacts.",
+      "persona_consistency": "Tomáš perfectly embodies a liberal, health-conscious IT specialist praising reform, while Marie fully reflects a struggling single mother from Ostrava feeling economically threatened by the policy.",
+      "interactive_coherence": "Marie directly counters Tomáš's enthusiasm by reframing the 'super zpráva' from her financial perspective and logically extends the impact beyond cola to everyday drinks for children."
+    },
+    "thread": {
+      "post": "Super zpráva! 👏 Konečně krok správným směrem. 3 miliardy do rozpočtu a motivace omezit tekutý cukr, který je jednou z hlavních příčin obezity. Stát nemá lidem říkat, co mají pít, ale je fér, když nezdravé produkty nenesou externí náklady na zdravotnictví. Doufám, že výnos půjde částečně i do prevence a podpory zdravého životního stylu. 🍏💧",
+      "reply": "Tak to jste mě teda potěšil, Tomáši. Pro vás \"super zpráva\", pro mě další rána do rozpočtu. 3 miliardy do státní kasy nepadají z nebe, to zaplatíme my, obyčejní lidi. A nemyslete si, že zdražejí jenom coly, ono se to promítne do všeho, i do obyčejný limonády nebo džusu pro děti. Fér by bylo, kdyby vláda taky trochu přispěla normálním rodinám, a ne nám pořád jen brala z peněženek."
+    },
+    "success": true
+  }
+}
