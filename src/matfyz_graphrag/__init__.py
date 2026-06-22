@@ -1,1 +1,0 @@
-"""matfyz_graphrag package."""
