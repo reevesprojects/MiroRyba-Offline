@@ -63,3 +63,4 @@ backend/venv311/
 # Ignore large dataset and model binaries
 data/external/
 data/raw/
+.env.cloud
