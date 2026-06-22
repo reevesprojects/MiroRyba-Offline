@@ -1,0 +1,16 @@
+[
+  {
+    "vek_kategorie": "45-60 let",
+    "region_typ": "Ústecký kraj",
+    "vzdelani_profese": "Středoškolské bez maturity / Průmysl a výroba",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Vysoká nedůvěra k vládě a celostátním médiím, vysoká důvěra k lokálním starostům."
+  },
+  {
+    "vek_kategorie": "30-45 let",
+    "region_typ": "Praha",
+    "vzdelani_profese": "Vysokoškolské / Služby a IT",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Vysoká důvěra v EU a národní instituce, mírná skepse k lokálním úřadům."
+  }
+]
