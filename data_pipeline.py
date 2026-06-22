@@ -54,13 +54,26 @@ def process_geographic_mapping(
     Returns:
         Dict[str, Dict[str, str]]: A dictionary mapping region names to their winning party.
     """
+    mock_mapping = {
+        "Hlavní město Praha": {"winning_party": "SPOLU"},
+        "Středočeský kraj": {"winning_party": "STAN"},
+        "Jihočeský kraj": {"winning_party": "ODS"},
+        "Plzeňský kraj": {"winning_party": "ANO"},
+        "Karlovarský kraj": {"winning_party": "ANO"},
+        "Ústecký kraj": {"winning_party": "ANO"},
+        "Liberecký kraj": {"winning_party": "STAN"},
+        "Královéhradecký kraj": {"winning_party": "SPOLU"},
+        "Pardubický kraj": {"winning_party": "SPOLU"},
+        "Kraj Vysočina": {"winning_party": "ANO"},
+        "Jihomoravský kraj": {"winning_party": "SPOLU"},
+        "Olomoucký kraj": {"winning_party": "ANO"},
+        "Zlínský kraj": {"winning_party": "ANO"},
+        "Moravskoslezský kraj": {"winning_party": "ANO"},
+    }
+
     if cisob.empty or cnumnuts.empty or pst4.empty or cpp.empty:
-        logging.warning("Missing essential geographic data. Using mock mapping.")
-        return {
-            "Ústecký kraj": {"winning_party": "ANO"},
-            "Praha": {"winning_party": "SPOLU"},
-            "Jihomoravský kraj": {"winning_party": "STAN"}
-        }
+        logging.warning("Missing essential geographic data. Using comprehensive mock mapping for 14 regions.")
+        return mock_mapping
 
     try:
         # 1. Join municipality codes (pst4) with cisob to get NUTS codes
@@ -84,11 +97,7 @@ def process_geographic_mapping(
     except (KeyError, Exception) as e:
         logging.warning(f"Error processing geographic data (Schema mismatch?): {e}")
         logging.info("Falling back to mock aggregations for demonstration...")
-        return {
-            "Ústecký kraj": {"winning_party": "ANO"},
-            "Praha": {"winning_party": "SPOLU"},
-            "Jihomoravský kraj": {"winning_party": "STAN"}
-        }
+        return mock_mapping
 
 
 def generate_regional_profile(region_name: str, region_mapping: Dict[str, Dict[str, str]]) -> Dict[str, str]:
@@ -122,19 +131,59 @@ def generate_regional_profile(region_name: str, region_mapping: Dict[str, Dict[s
     # 3. Demographics
     if "Praha" in region_name:
         vek_kategorie = "30-45 let"
-        vzdelani_profese = "Vysokoškolské / Služby a IT"
-    elif "Ústecký" in region_name or "Moravskoslezský" in region_name:
+        vzdelani_profese = "Vysokoškolské / Služby, IT, Management"
+    elif "Středočeský" in region_name:
+        vek_kategorie = "35-50 let"
+        vzdelani_profese = "Středoškolské s maturitou / Logistika, Služby"
+    elif "Jihočeský" in region_name:
+        vek_kategorie = "40-55 let"
+        vzdelani_profese = "Středoškolské s maturitou / Zemědělství, Turismus"
+    elif "Plzeňský" in region_name:
+        vek_kategorie = "35-50 let"
+        vzdelani_profese = "Středoškolské odborné / Strojírenství, Průmysl"
+    elif "Karlovarský" in region_name:
+        vek_kategorie = "40-60 let"
+        vzdelani_profese = "Středoškolské bez maturity / Lázeňství, Těžba"
+    elif "Ústecký" in region_name:
         vek_kategorie = "45-60 let"
-        vzdelani_profese = "Středoškolské bez maturity / Průmysl a výroba"
+        vzdelani_profese = "Středoškolské bez maturity / Těžba, Chemický průmysl"
+    elif "Liberecký" in region_name:
+        vek_kategorie = "35-55 let"
+        vzdelani_profese = "Středoškolské s maturitou / Automobilový průmysl, Sklářství"
+    elif "Královéhradecký" in region_name:
+        vek_kategorie = "40-60 let"
+        vzdelani_profese = "Středoškolské s maturitou / Výroba, Služby"
+    elif "Pardubický" in region_name:
+        vek_kategorie = "35-55 let"
+        vzdelani_profese = "Středoškolské s maturitou / Průmysl, Doprava"
+    elif "Vysočina" in region_name:
+        vek_kategorie = "40-60 let"
+        vzdelani_profese = "Středoškolské odborné / Zemědělství, Dřevozpracující průmysl"
+    elif "Jihomoravský" in region_name:
+        vek_kategorie = "30-50 let"
+        vzdelani_profese = "Vysokoškolské / Věda, Výzkum, Vinařství"
+    elif "Olomoucký" in region_name:
+        vek_kategorie = "40-60 let"
+        vzdelani_profese = "Středoškolské s maturitou / Strojírenství, Potravinářství"
+    elif "Zlínský" in region_name:
+        vek_kategorie = "35-55 let"
+        vzdelani_profese = "Středoškolské odborné / Zpracovatelský průmysl"
+    elif "Moravskoslezský" in region_name:
+        vek_kategorie = "45-60 let"
+        vzdelani_profese = "Středoškolské bez maturity / Těžký průmysl, Hutnictví"
     else:
         vek_kategorie = "35-50 let"
         vzdelani_profese = "Středoškolské s maturitou / Administrativa a služby"
 
     # 4. Trust Baseline
-    if "Praha" in region_name:
+    if "Praha" in region_name or "Jihomoravský" in region_name:
         instituce_skepse = "Vysoká důvěra v EU a národní instituce, mírná skepse k lokálním úřadům."
+    elif "Karlovarský" in region_name or "Ústecký" in region_name or "Moravskoslezský" in region_name:
+        instituce_skepse = "Extrémní nedůvěra k národní vládě a EU, silná vazba na lokální komunitu."
+    elif "Vysočina" in region_name or "Jihočeský" in region_name:
+        instituce_skepse = "Pragmatická nedůvěra k celostátním médiím, vysoká důvěra k lokálním starostům."
     else:
-        instituce_skepse = "Vysoká nedůvěra k vládě a celostátním médiím, vysoká důvěra k lokálním starostům."
+        instituce_skepse = "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady."
 
     return {
         "vek_kategorie": vek_kategorie,
