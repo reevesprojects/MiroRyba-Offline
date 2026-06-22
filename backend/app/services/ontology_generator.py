@@ -266,7 +266,12 @@ Based on the above content, design entity types and relationship types suitable 
             result["analysis_summary"] = ""
 
         # Validate entity types
+        sanitized_entities = []
         for entity in result["entity_types"]:
+            if isinstance(entity, str):
+                entity = {"name": entity}
+            elif not isinstance(entity, dict):
+                continue
             if "attributes" not in entity:
                 entity["attributes"] = []
             if "examples" not in entity:
@@ -274,15 +279,28 @@ Based on the above content, design entity types and relationship types suitable 
             # Ensure description doesn't exceed 100 characters
             if len(entity.get("description", "")) > 100:
                 entity["description"] = entity["description"][:97] + "..."
+            if "name" not in entity:
+                entity["name"] = "UnknownEntity"
+            sanitized_entities.append(entity)
+        result["entity_types"] = sanitized_entities
 
         # Validate relationship types
+        sanitized_edges = []
         for edge in result["edge_types"]:
+            if isinstance(edge, str):
+                edge = {"name": edge}
+            elif not isinstance(edge, dict):
+                continue
             if "source_targets" not in edge:
                 edge["source_targets"] = []
             if "attributes" not in edge:
                 edge["attributes"] = []
             if len(edge.get("description", "")) > 100:
                 edge["description"] = edge["description"][:97] + "..."
+            if "name" not in edge:
+                edge["name"] = "UNKNOWN_RELATION"
+            sanitized_edges.append(edge)
+        result["edge_types"] = sanitized_edges
 
         # Zep API limit: maximum 10 custom entity types, maximum 10 custom edge types
         MAX_ENTITY_TYPES = 10

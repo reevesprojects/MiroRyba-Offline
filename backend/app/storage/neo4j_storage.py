@@ -62,9 +62,64 @@ class Neo4jStorage(GraphStorage):
         self._driver.close()
 
     def _ensure_schema(self):
-        """Create indexes and constraints if they don't exist."""
+        """Create indexes and constraints if they don't exist, recreating vector indexes if dimensions mismatch."""
+        # Get actual dimensions from embedding service
+        try:
+            dimensions = self._embedding.dimension
+            logger.info(f"Detected active embedding dimension: {dimensions}")
+        except Exception as e:
+            logger.warning(f"Could not check embedding dimension, defaulting to 768: {e}")
+            dimensions = 768
+
         with self._driver.session() as session:
-            for query in neo4j_schema.ALL_SCHEMA_QUERIES:
+            # Check existing indexes for dimension mismatch
+            existing_dimensions = {}
+            try:
+                res = session.run("SHOW INDEXES YIELD name, options")
+                for record in res:
+                    name = record["name"]
+                    options = record["options"] or {}
+                    if "indexConfig" in options and "vector.dimensions" in options["indexConfig"]:
+                        existing_dimensions[name] = int(options["indexConfig"]["vector.dimensions"])
+            except Exception as e:
+                logger.warning(f"Could not inspect existing index dimensions: {e}")
+
+            # Drop vector indexes if their dimension doesn't match the new model
+            for index_name in ["entity_embedding", "fact_embedding"]:
+                if index_name in existing_dimensions and existing_dimensions[index_name] != dimensions:
+                    logger.info(f"Vector index '{index_name}' has dimension {existing_dimensions[index_name]} but model has {dimensions}. Recreating index...")
+                    try:
+                        session.run(f"DROP INDEX {index_name} IF EXISTS")
+                    except Exception as e:
+                        logger.warning(f"Failed to drop index '{index_name}': {e}")
+
+            # Build list of schema queries with dynamic dimensions
+            queries = [
+                neo4j_schema.CREATE_GRAPH_UUID_CONSTRAINT,
+                neo4j_schema.CREATE_ENTITY_UUID_CONSTRAINT,
+                neo4j_schema.CREATE_EPISODE_UUID_CONSTRAINT,
+                # Vector indexes with dynamic dimensions
+                f"""
+                CREATE VECTOR INDEX entity_embedding IF NOT EXISTS
+                FOR (n:Entity) ON (n.embedding)
+                OPTIONS {{indexConfig: {{
+                    `vector.dimensions`: {dimensions},
+                    `vector.similarity_function`: 'cosine'
+                }}}}
+                """,
+                f"""
+                CREATE VECTOR INDEX fact_embedding IF NOT EXISTS
+                FOR ()-[r:RELATION]-() ON (r.fact_embedding)
+                OPTIONS {{indexConfig: {{
+                    `vector.dimensions`: {dimensions},
+                    `vector.similarity_function`: 'cosine'
+                }}}}
+                """,
+                neo4j_schema.CREATE_ENTITY_FULLTEXT_INDEX,
+                neo4j_schema.CREATE_FACT_FULLTEXT_INDEX,
+            ]
+
+            for query in queries:
                 try:
                     session.run(query)
                 except Exception as e:
@@ -268,8 +323,8 @@ class Neo4jStorage(GraphStorage):
                         "uuid": str(uuid.uuid4()),
                         "src_uuid": src_uuid,
                         "tgt_uuid": tgt_uuid,
-                        "name": r["type"],
-                        "fact": r["fact"],
+                        "name": r.get("type", "RELATES_TO"),
+                        "fact": r.get("fact", "Souvislost zmíněna v textu."),
                         "fact_emb": relation_embeddings[i] if i < len(relation_embeddings) else [],
                         "episode_id": episode_id,
                         "now": now
