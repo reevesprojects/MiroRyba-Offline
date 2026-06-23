@@ -1,0 +1,142 @@
+{
+  "Hlavní město Praha": {
+    "SPOLU": 216098,
+    "ANO": 126170,
+    "Česká pirátská strana": 107442,
+    "STAN": 85260,
+    "SPD": 33292,
+    "Motoristé sobě": 32791,
+    "Stačilo! (KSČM)": 17461,
+    "PŘÍSAHA občanské hnutí": 4561
+  },
+  "Středočeský kraj": {
+    "ANO": 234681,
+    "SPOLU": 183391,
+    "STAN": 103451,
+    "Česká pirátská strana": 68571,
+    "Motoristé sobě": 58574,
+    "SPD": 53242,
+    "Stačilo! (KSČM)": 27385,
+    "PŘÍSAHA občanské hnutí": 7969
+  },
+  "Jihočeský kraj": {
+    "ANO": 121501,
+    "SPOLU": 82278,
+    "STAN": 37512,
+    "SPD": 27650,
+    "Česká pirátská strana": 26467,
+    "Motoristé sobě": 24535,
+    "Stačilo! (KSČM)": 16717,
+    "PŘÍSAHA občanské hnutí": 4052
+  },
+  "Plzeňský kraj": {
+    "ANO": 113063,
+    "SPOLU": 63598,
+    "STAN": 32179,
+    "SPD": 26908,
+    "Česká pirátská strana": 23582,
+    "Motoristé sobě": 21701,
+    "Stačilo! (KSČM)": 12932,
+    "PŘÍSAHA občanské hnutí": 3085
+  },
+  "Karlovarský kraj": {
+    "ANO": 57555,
+    "SPOLU": 20871,
+    "STAN": 14828,
+    "SPD": 13837,
+    "Motoristé sobě": 9868,
+    "Česká pirátská strana": 8801,
+    "Stačilo! (KSČM)": 5548,
+    "PŘÍSAHA občanské hnutí": 1414
+  },
+  "Ústecký kraj": {
+    "ANO": 173864,
+    "SPOLU": 59706,
+    "STAN": 37252,
+    "SPD": 35408,
+    "Česká pirátská strana": 27012,
+    "Motoristé sobě": 26324,
+    "Stačilo! (KSČM)": 16748,
+    "PŘÍSAHA občanské hnutí": 4479
+  },
+  "Liberecký kraj": {
+    "ANO": 79181,
+    "SPOLU": 41567,
+    "STAN": 37609,
+    "SPD": 19914,
+    "Česká pirátská strana": 18891,
+    "Motoristé sobě": 16933,
+    "Stačilo! (KSČM)": 9620,
+    "PŘÍSAHA občanské hnutí": 2233
+  },
+  "Královéhradecký kraj": {
+    "ANO": 101557,
+    "SPOLU": 71268,
+    "STAN": 36872,
+    "Česká pirátská strana": 24333,
+    "SPD": 23404,
+    "Motoristé sobě": 22981,
+    "Stačilo! (KSČM)": 12724,
+    "PŘÍSAHA občanské hnutí": 3278
+  },
+  "Pardubický kraj": {
+    "ANO": 98797,
+    "SPOLU": 67422,
+    "STAN": 31535,
+    "Motoristé sobě": 22155,
+    "Česká pirátská strana": 22015,
+    "SPD": 21938,
+    "Stačilo! (KSČM)": 12885,
+    "PŘÍSAHA občanské hnutí": 3338
+  },
+  "Kraj Vysočina": {
+    "ANO": 103972,
+    "SPOLU": 67037,
+    "STAN": 33976,
+    "SPD": 21099,
+    "Česká pirátská strana": 20373,
+    "Motoristé sobě": 19588,
+    "Stačilo! (KSČM)": 13537,
+    "PŘÍSAHA občanské hnutí": 3477
+  },
+  "Jihomoravský kraj": {
+    "ANO": 215596,
+    "SPOLU": 181892,
+    "STAN": 64307,
+    "Česká pirátská strana": 63119,
+    "SPD": 50344,
+    "Motoristé sobě": 40952,
+    "Stačilo! (KSČM)": 29513,
+    "PŘÍSAHA občanské hnutí": 8992
+  },
+  "Olomoucký kraj": {
+    "ANO": 131683,
+    "SPOLU": 68520,
+    "SPD": 32084,
+    "STAN": 31830,
+    "Česká pirátská strana": 24942,
+    "Motoristé sobě": 22586,
+    "Stačilo! (KSČM)": 17575,
+    "PŘÍSAHA občanské hnutí": 4029
+  },
+  "Zlínský kraj": {
+    "ANO": 110814,
+    "SPOLU": 77049,
+    "STAN": 32444,
+    "SPD": 27784,
+    "Česká pirátská strana": 23967,
+    "Motoristé sobě": 21352,
+    "Stačilo! (KSČM)": 14789,
+    "PŘÍSAHA občanské hnutí": 3552
+  },
+  "Moravskoslezský kraj": {
+    "ANO": 272073,
+    "SPOLU": 112649,
+    "STAN": 52457,
+    "SPD": 50707,
+    "Česká pirátská strana": 45022,
+    "Motoristé sobě": 40261,
+    "Stačilo! (KSČM)": 34597,
+    "PŘÍSAHA občanské hnutí": 6044
+  }
+}

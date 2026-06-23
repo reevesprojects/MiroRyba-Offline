@@ -136,6 +136,10 @@
             </div>
 
             <div :style="s.btnSection">
+              <div :style="s.agentSelectorContainer">
+                <label :style="s.agentSelectorLabel">Demographic Citizens to Simulate:</label>
+                <input type="number" v-model="formData.numAgents" min="1" max="500" :style="s.agentSelectorInput" :disabled="loading" />
+              </div>
               <button :style="s.startEngineBtn" @click="startSimulation" :disabled="!canSubmit || loading">
                 <span v-if="!loading">Start Engine</span>
                 <span v-else>Initializing...</span>
@@ -222,6 +226,9 @@ const s = reactive({
   codeInput: { width: '100%', border: 'none', background: 'transparent', padding: '20px', fontFamily: mono, fontSize: '0.9rem', lineHeight: '1.6', resize: 'vertical', outline: 'none', minHeight: '150px' },
   modelBadge: { position: 'absolute', bottom: '10px', right: '15px', fontFamily: mono, fontSize: '0.7rem', color: '#AAA' },
   btnSection: { padding: '0 20px 20px' },
+  agentSelectorContainer: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px', padding: '10px', border: '1px solid #EEE', background: '#FAFAFA' },
+  agentSelectorLabel: { fontFamily: mono, fontSize: '0.85rem', color: '#333' },
+  agentSelectorInput: { fontFamily: mono, fontSize: '1rem', width: '80px', padding: '5px', border: '1px solid #CCC', textAlign: 'center', outline: 'none' },
   startEngineBtn: { width: '100%', background: '#000', color: '#fff', border: 'none', padding: '20px', fontFamily: mono, fontWeight: '700', fontSize: '1.1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', letterSpacing: '1px' },
   autoPromptBtn: { background: '#FF4500', color: '#fff', border: 'none', padding: '4px 10px', fontFamily: mono, fontSize: '0.7rem', fontWeight: '700', cursor: 'pointer', borderRadius: '2px', display: 'flex', alignItems: 'center', gap: '5px', transition: 'all 0.2s ease' },
   autoPromptBtnDisabled: { opacity: '0.5', cursor: 'not-allowed', background: '#999' }
@@ -237,7 +244,7 @@ const steps = [
 
 const router = useRouter()
 
-const formData = ref({ simulationRequirement: '' })
+const formData = ref({ simulationRequirement: '', numAgents: 28 })
 const files = ref([])
 const loading = ref(false)
 const error = ref('')
@@ -245,7 +252,7 @@ const isDragOver = ref(false)
 const fileInput = ref(null)
 
 const canSubmit = computed(() => {
-  return formData.value.simulationRequirement.trim() !== '' && files.value.length > 0
+  return formData.value.simulationRequirement.trim() !== '' && files.value.length > 0 && formData.value.numAgents > 0
 })
 
 const triggerFileInput = () => { if (!loading.value) fileInput.value?.click() }
@@ -271,7 +278,7 @@ const autoCreatePrompt = () => {
 const startSimulation = () => {
   if (!canSubmit.value || loading.value) return
   import('../store/pendingUpload.js').then(({ setPendingUpload }) => {
-    setPendingUpload(files.value, formData.value.simulationRequirement)
+    setPendingUpload(files.value, formData.value.simulationRequirement, formData.value.numAgents)
     router.push({ name: 'Process', params: { projectId: 'new' } })
   })
 }

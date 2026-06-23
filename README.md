@@ -1,36 +1,58 @@
 # Editorial Copilot: MiroRyba Swarm Identity Engine
 
 ## Problem Statement
-Traditional LLM-based agentic simulations (swarms) often suffer from "persona collapse" and homogeneity, failing to represent diverse demographic nuances. This project solves the issue of demographic homogeneity in Czech political simulations by creating a robust data ingestion pipeline that translates raw governmental census and election data into statistically accurate, geographically bounded AI personas. 
+Traditional LLM-based agentic simulations (swarms) often suffer from "persona collapse" and demographic homogeneity, failing to represent nuanced societal distributions. This limits their validity in simulating real-world sociological or political discourse. 
+This project solves the issue of demographic homogeneity in Czech political simulations by building a hierarchical probabilistic pipeline that translates raw governmental census and election data into statistically accurate, individualized AI personas. 
 
-This work serves as the foundational data ingestion and persona configuration layer for the broader MiroFish framework (based on the OASIS agentic simulation architecture).
+Reference paper: *Generative Agents: Interactive Simulacra of Human Behavior* (Park et al., 2023) which highlights the necessity of robustly initialized agent memories and demographic traits to produce believable emergent behavior in multi-agent environments.
 
 ## Scope
+
 **Implemented:**
-*   **Data Pipeline (`data_pipeline.py`)**: An automated ETL pipeline that ingests raw Czech Statistical Office (ČSÚ) demographic and electoral datasets, merges them geographically using NUTS codes, and synthesizes accurate regional personas. The pipeline now covers all 14 Czech regions fully without falling back to generalized mock aggregations when schema data is missing.
-*   **Swarm Injector (`swarm_injector.py`)**: An asynchronous, Semaphore-throttled dispatch engine that injects the generated personas into a highly strict, localized prompt template and simulates the swarm execution against breaking news articles.
-*   **Neo4j Graph Integration (`neo4j_importer.py`)**: Directly integrates the dynamically generated JSON personas as `Entity:Persona` nodes into the live Neo4j knowledge graph backend.
+* **Precomputed Demographic Tree (`precompute_demographics.py`)**: An ETL script that parses hundreds of megabytes of raw 2021 Czech Statistical Office (ČSÚ) CSVs to build an $O(1)$ hierarchical sampling JSON tree for age, gender, education, religion, and economic activity.
+* **Graph Injector (`neo4j_importer.py`)**: A robust, PEP8-compliant script that generates unique individualized citizens. It uses `faker` for identity generation, blends real-world election data with sociological demographic modifiers, and injects the resulting `Entity:Person` nodes directly into the live Neo4j knowledge graph.
+* **Data Pipeline (`data_pipeline.py`)**: Synthesizes qualitative regional archetypes.
+
+**Left for Future:**
+* Creating dynamic Neo4j social network edges (`[:KNOWS]`, `[:WORKS_WITH]`) based on shared demographics or region.
+* Expanding the political ideology sampler by ingesting historical election timelines.
+* Implementing a real-time scraping module for daily ČTK news to feed the simulation.
 
 ## Execution Guide
-The project relies on strict command-line parameters utilizing `argparse`. Ensure you have installed the dependencies via `pip install -r requirements.txt`.
 
-### 1. Build the Persona Registry
-Ingests the raw CSU CSVs and builds the demographic JSON registry.
+The project relies on strict command-line parameters and standard Python structures. Ensure dependencies are installed via `pip install -r requirements.txt` (or via the provided `pyproject.toml`).
+
+### 1. Precompute Demographic and Election Data
+First, generate the probability distributions from the raw data.
 ```bash
-python data_pipeline.py --data-dir "data/raw" --output-file "data/processed/personas_registry.json" --regions "Ústecký kraj" "Praha" "Jihomoravský kraj"
+python precompute_demographics.py --raw-dir "data/raw/csu_census" --output "data/processed/demographic_distributions.json"
 ```
 
-### 2. Dispatch the LLM Swarm
-Injects the personas into the prompts and executes the async throttled swarm logic.
+### 2. Build the Regional Registry
+Synthesizes the qualitative geographic mapping.
 ```bash
-python swarm_injector.py --registry-file "data/processed/personas_registry.json" --output-file "data/processed/swarm_output.json" --max-workers 4 --article "Vláda dnes oznámila novou metodiku pro výpočet energetických dotací."
+python data_pipeline.py --data-dir "data/raw" --output-file "data/processed/personas_registry.json"
 ```
 
 ### 3. Integrate with Neo4j Knowledge Graph
-Pushes the generated dynamic personas directly into the live Neo4j database as `Entity` nodes.
+Samples the exact statistical attributes and injects unique individuals into the graph.
 ```bash
-python neo4j_importer.py --registry-file "data/processed/personas_registry.json" --neo4j-uri "bolt://localhost:7687" --neo4j-user "neo4j" --neo4j-password "password"
+python neo4j_importer.py --registry-file "data/processed/personas_registry.json" --neo4j-uri "bolt://localhost:7687" --neo4j-user "neo4j" --neo4j-password "password" --num-agents 100
 ```
 
 ## Sample Output
-A successful execution of the swarm engine produces a clean, JSON-formatted output containing the persona identifiers, the calculated prompt payload length, and the simulated regional response. A sample file can be found at `data/processed/swarm_output.json`.
+A successful graph injection produces mathematically accurate persona JSONs. A sample representation can be found in `data/processed/election_2025_distributions.json` (showing the parsed XML) or within the Neo4j database as:
+
+```json
+{
+  "realname": "Zdenka Kopecká",
+  "username": "lmasek882",
+  "region_typ": "Moravskoslezský kraj",
+  "age": 23,
+  "gender": "female",
+  "education": "úplné střední všeobecné vzdělání",
+  "politicka_preference": "Česká pirátská strana",
+  "hlavni_zajem": "Kempování, Domácí mazlíčci",
+  "bio": "Obyvatel regionu Moravskoslezský kraj. Volí: Česká pirátská strana..."
+}
+```

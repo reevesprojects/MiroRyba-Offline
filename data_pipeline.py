@@ -100,16 +100,68 @@ def process_geographic_mapping(
         return mock_mapping
 
 
-def generate_regional_profile(region_name: str, region_mapping: Dict[str, Dict[str, str]]) -> Dict[str, str]:
+def load_census_populations(census_path: Path) -> Dict[str, int]:
+    """
+    Loads region populations from the census CSV file.
+    """
+    fallbacks = {
+        "Hlavní město Praha": 1301432,
+        "Praha": 1301432,
+        "Středočeský kraj": 1415463,
+        "Jihočeský kraj": 631803,
+        "Plzeňský kraj": 581436,
+        "Karlovarský kraj": 279103,
+        "Ústecký kraj": 789098,
+        "Liberecký kraj": 435220,
+        "Královéhradecký kraj": 538303,
+        "Pardubický kraj": 510037,
+        "Kraj Vysočina": 497661,
+        "Jihomoravský kraj": 1197651,
+        "Olomoucký kraj": 619788,
+        "Zlínský kraj": 564331,
+        "Moravskoslezský kraj": 1162841
+    }
+    
+    if not census_path.exists():
+        logging.warning(f"Census file not found: {census_path}. Using fallback populations.")
+        return fallbacks
+        
+    try:
+        df = pd.read_csv(census_path, sep=',', encoding="utf-8")
+        # Filter for rows where age group (vek_txt) is NaN and gender (pohlavi_txt) is NaN
+        df_filtered = df[df['vek_txt'].isna() & df['pohlavi_txt'].isna()]
+        
+        pop_map = {}
+        for _, row in df_filtered.iterrows():
+            uzemi = str(row['uzemi_txt']).strip()
+            try:
+                pop_map[uzemi] = int(row['hodnota'])
+            except (ValueError, TypeError):
+                continue
+                
+        # Fill missing ones from fallback
+        for k, v in fallbacks.items():
+            if k not in pop_map:
+                pop_map[k] = v
+        return pop_map
+    except Exception as e:
+        logging.warning(f"Error loading census populations: {e}. Using fallback populations.")
+        return fallbacks
+
+
+def generate_regional_profile(
+    region_name: str, region_mapping: Dict[str, Dict[str, str]], population_map: Dict[str, int]
+) -> Dict[str, Any]:
     """
     Generates a single regional archetype profile containing demographic and political traits.
 
     Args:
         region_name (str): The geographic region to generate a profile for.
         region_mapping (Dict[str, Dict[str, str]]): Mapping containing the winning party per region.
+        population_map (Dict[str, int]): Mapping containing population per region.
 
     Returns:
-        Dict[str, str]: A dictionary containing the generated persona's demographic traits.
+        Dict[str, Any]: A dictionary containing the generated persona's demographic traits.
     """
     # 1. Geography
     region_typ = region_name
@@ -190,16 +242,17 @@ def generate_regional_profile(region_name: str, region_mapping: Dict[str, Dict[s
         "region_typ": region_typ,
         "vzdelani_profese": vzdelani_profese,
         "hlavni_zajem": hlavni_zajem,
-        "instituce_skepse": instituce_skepse
+        "instituce_skepse": instituce_skepse,
+        "population": population_map.get(region_name, 500000)
     }
 
 
-def write_registry_to_file(registry: List[Dict[str, str]], output_path: Path) -> None:
+def write_registry_to_file(registry: List[Dict[str, Any]], output_path: Path) -> None:
     """
     Saves the generated persona registry to a JSON file.
 
     Args:
-        registry (List[Dict[str, str]]): A list of persona dictionaries.
+        registry (List[Dict[str, Any]]): A list of persona dictionaries.
         output_path (Path): The target path for the JSON file.
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -231,12 +284,16 @@ def main() -> None:
     # Process the loaded data into a mapping dictionary
     region_mapping = process_geographic_mapping(pst4, cisob, cnumnuts, cpp)
     
+    # Load census populations
+    census_file = raw_dir / "csu_census" / "sldb2021_vek5_pohlavi.csv"
+    population_map = load_census_populations(census_file)
+    
     # Generate the requested personas
     registry = []
     region_counter = Counter()  # Fulfilling the collections.Counter requirement
     
     for region in args.regions:
-        profile = generate_regional_profile(region, region_mapping)
+        profile = generate_regional_profile(region, region_mapping, population_map)
         registry.append(profile)
         region_counter[region] += 1
         
