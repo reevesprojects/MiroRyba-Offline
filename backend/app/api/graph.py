@@ -293,7 +293,8 @@ def build_graph():
         # Parse request
         data = request.get_json() or {}
         project_id = data.get('project_id')
-        logger.debug(f"Request parameters: project_id={project_id}")
+        num_agents = data.get('num_agents', 28)
+        logger.info(f"Request parameters: project_id={project_id}, num_agents={num_agents}")
         
         if not project_id:
             return jsonify({
@@ -445,6 +446,32 @@ def build_graph():
                     message="Text processing completed, generating graph data...",
                     progress=90
                 )
+
+                # --- AUTO INJECT DEMOGRAPHICS ---
+                task_manager.update_task(
+                    task_id,
+                    message="Automatically injecting demographic personas into the new graph...",
+                    progress=92
+                )
+                try:
+                    import subprocess
+                    import sys
+                    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "neo4j_importer.py")
+                    if os.path.exists(script_path):
+                        subprocess.run([
+                            sys.executable, script_path, 
+                            "--neo4j-uri", Config.NEO4J_URI,
+                            "--neo4j-user", Config.NEO4J_USER,
+                            "--neo4j-password", Config.NEO4J_PASSWORD,
+                            "--graph-id", graph_id,
+                            "--num-agents", str(num_agents),
+                            "--registry-file", os.path.join(os.path.dirname(script_path), "data", "processed", "personas_registry.json")
+                        ], check=True)
+                        build_logger.info(f"[{task_id}] Successfully auto-injected demographics into graph {graph_id}")
+                    else:
+                        build_logger.warning(f"[{task_id}] neo4j_importer.py not found at {script_path}")
+                except Exception as e:
+                    build_logger.error(f"[{task_id}] Failed to auto-inject demographics: {e}")
 
                 # Get graph data
                 task_manager.update_task(

@@ -590,6 +590,8 @@ const handleNewProject = async () => {
     const response = await generateOntology(formDataObj)
 
     if (response.success) {
+      const capturedNumAgents = pending.numAgents || 28
+
       // Clear pending upload data
       clearPendingUpload()
 
@@ -606,7 +608,7 @@ const handleNewProject = async () => {
       ontologyProgress.value = null
 
       // Automatically start graph building
-      await startBuildGraph()
+      await startBuildGraph(capturedNumAgents)
     } else {
       error.value = response.error || 'Ontology generation failed'
     }
@@ -674,7 +676,7 @@ const updatePhaseByStatus = (status) => {
 }
 
 // Start building graph
-const startBuildGraph = async () => {
+const startBuildGraph = async (passedNumAgents = 28) => {
   try {
     currentPhase.value = 1
     // Initialize progress
@@ -683,7 +685,10 @@ const startBuildGraph = async () => {
       message: 'Starting graph build...'
     }
 
-    const response = await buildGraph({ project_id: currentProjectId.value })
+    const response = await buildGraph({ 
+      project_id: currentProjectId.value,
+      num_agents: passedNumAgents 
+    })
 
     if (response.success) {
       buildProgress.value.message = 'Graph build task started...'

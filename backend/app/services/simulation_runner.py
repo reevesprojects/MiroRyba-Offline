@@ -419,6 +419,7 @@ class SimulationRunner:
                 sys.executable,  # Python interpreter
                 script_path,
                 "--config", config_path,  # Use full config file path
+                "--no-wait",  # Exit after simulation completes, don't enter interactive command mode
             ]
             
             # If max_rounds specified, add to command-line arguments

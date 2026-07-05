@@ -206,6 +206,7 @@ const handleNewProject = async () => {
     
     const res = await generateOntology(formData)
     if (res.success) {
+      const capturedNumAgents = pending.numAgents || 28
       clearPendingUpload()
       currentProjectId.value = res.data.project_id
       projectData.value = res.data
@@ -213,7 +214,7 @@ const handleNewProject = async () => {
       router.replace({ name: 'Process', params: { projectId: res.data.project_id } })
       ontologyProgress.value = null
       addLog(`Ontology generated successfully for project ${res.data.project_id}`)
-      await startBuildGraph()
+      await startBuildGraph(capturedNumAgents)
     } else {
       error.value = res.error || 'Ontology generation failed'
       addLog(`Error generating ontology: ${error.value}`)
@@ -268,13 +269,16 @@ const updatePhaseByStatus = (status) => {
   }
 }
 
-const startBuildGraph = async () => {
+const startBuildGraph = async (passedNumAgents = 28) => {
   try {
     currentPhase.value = 1
     buildProgress.value = { progress: 0, message: 'Starting build...' }
     addLog('Initiating graph build...')
     
-    const res = await buildGraph({ project_id: currentProjectId.value })
+    const res = await buildGraph({ 
+      project_id: currentProjectId.value,
+      num_agents: passedNumAgents
+    })
     if (res.success) {
       addLog(`Graph build task started. Task ID: ${res.data.task_id}`)
       startGraphPolling()

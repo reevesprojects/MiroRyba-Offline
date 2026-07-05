@@ -1,0 +1,114 @@
+[
+  {
+    "vek_kategorie": "30-45 let",
+    "region_typ": "Hlavní město Praha",
+    "vzdelani_profese": "Vysokoškolské / Služby, IT, Management",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Vysoká důvěra v EU a národní instituce, mírná skepse k lokálním úřadům.",
+    "population": 1301432
+  },
+  {
+    "vek_kategorie": "35-50 let",
+    "region_typ": "Středočeský kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Logistika, Služby",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 1415463
+  },
+  {
+    "vek_kategorie": "40-55 let",
+    "region_typ": "Jihočeský kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Zemědělství, Turismus",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Pragmatická nedůvěra k celostátním médiím, vysoká důvěra k lokálním starostům.",
+    "population": 631803
+  },
+  {
+    "vek_kategorie": "35-50 let",
+    "region_typ": "Plzeňský kraj",
+    "vzdelani_profese": "Středoškolské odborné / Strojírenství, Průmysl",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 581436
+  },
+  {
+    "vek_kategorie": "40-60 let",
+    "region_typ": "Karlovarský kraj",
+    "vzdelani_profese": "Středoškolské bez maturity / Lázeňství, Těžba",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Extrémní nedůvěra k národní vládě a EU, silná vazba na lokální komunitu.",
+    "population": 279103
+  },
+  {
+    "vek_kategorie": "45-60 let",
+    "region_typ": "Ústecký kraj",
+    "vzdelani_profese": "Středoškolské bez maturity / Těžba, Chemický průmysl",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Extrémní nedůvěra k národní vládě a EU, silná vazba na lokální komunitu.",
+    "population": 789098
+  },
+  {
+    "vek_kategorie": "35-55 let",
+    "region_typ": "Liberecký kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Automobilový průmysl, Sklářství",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 435220
+  },
+  {
+    "vek_kategorie": "40-60 let",
+    "region_typ": "Královéhradecký kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Výroba, Služby",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 538303
+  },
+  {
+    "vek_kategorie": "35-55 let",
+    "region_typ": "Pardubický kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Průmysl, Doprava",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 510037
+  },
+  {
+    "vek_kategorie": "40-60 let",
+    "region_typ": "Kraj Vysočina",
+    "vzdelani_profese": "Středoškolské odborné / Zemědělství, Dřevozpracující průmysl",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Pragmatická nedůvěra k celostátním médiím, vysoká důvěra k lokálním starostům.",
+    "population": 497661
+  },
+  {
+    "vek_kategorie": "30-50 let",
+    "region_typ": "Jihomoravský kraj",
+    "vzdelani_profese": "Vysokoškolské / Věda, Výzkum, Vinařství",
+    "hlavni_zajem": "Podpora demokratických hodnot, západní integrace a institucionální reformy.",
+    "instituce_skepse": "Vysoká důvěra v EU a národní instituce, mírná skepse k lokálním úřadům.",
+    "population": 1197651
+  },
+  {
+    "vek_kategorie": "40-60 let",
+    "region_typ": "Olomoucký kraj",
+    "vzdelani_profese": "Středoškolské s maturitou / Strojírenství, Potravinářství",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 619788
+  },
+  {
+    "vek_kategorie": "35-55 let",
+    "region_typ": "Zlínský kraj",
+    "vzdelani_profese": "Středoškolské odborné / Zpracovatelský průmysl",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Mírná nedůvěra k vládě, stabilní důvěra v krajské a obecní úřady.",
+    "population": 564331
+  },
+  {
+    "vek_kategorie": "45-60 let",
+    "region_typ": "Moravskoslezský kraj",
+    "vzdelani_profese": "Středoškolské bez maturity / Těžký průmysl, Hutnictví",
+    "hlavni_zajem": "Ochrana před inflací, ekonomická stabilita a průmyslová bezpečnost regionu.",
+    "instituce_skepse": "Extrémní nedůvěra k národní vládě a EU, silná vazba na lokální komunitu.",
+    "population": 1162841
+  }
+]

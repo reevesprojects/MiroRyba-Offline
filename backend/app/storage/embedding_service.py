@@ -32,11 +32,26 @@ class EmbeddingService:
         self.max_retries = max_retries
         self.timeout = timeout
         self._embed_url = f"{self.base_url}/api/embed"
+        self._dimension = None
 
         # Simple in-memory cache (text -> embedding vector)
         # Using dict instead of lru_cache because lists aren't hashable
         self._cache: dict[str, List[float]] = {}
         self._cache_max_size = 2000
+
+    @property
+    def dimension(self) -> int:
+        """Get the embedding vector dimension dynamically."""
+        if self._dimension is None:
+            try:
+                # Embed a simple dummy string to detect dimension
+                vec = self._request_embeddings(["dim_check"])[0]
+                self._dimension = len(vec)
+                logger.info(f"Detected embedding dimension for model '{self.model}': {self._dimension}")
+            except Exception as e:
+                logger.warning(f"Failed to detect embedding dimension for model '{self.model}': {e}. Defaulting to 768.")
+                self._dimension = 768
+        return self._dimension
 
     def embed(self, text: str) -> List[float]:
         """
@@ -98,7 +113,7 @@ class EmbeddingService:
                 uncached_texts.append(text)
             else:
                 # Empty text — zero vector
-                results[i] = [0.0] * 768
+                results[i] = [0.0] * self.dimension
 
         # Batch-embed uncached texts
         if uncached_texts:

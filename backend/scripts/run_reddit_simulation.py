@@ -461,9 +461,14 @@ class RedditSimulationRunner:
         
         print(f"LLM configuration: model={llm_model}, base_url={llm_base_url[:40] if llm_base_url else 'default'}...")
         
+        # Extract benchmark config if present
+        temperature = self.config.get("temperature", 0.7)
+        print(f"Using temperature: {temperature}")
+        
         return ModelFactory.create(
             model_platform=ModelPlatformType.OPENAI,
             model_type=llm_model,
+            model_config_dict={"temperature": temperature}
         )
     
     def _get_active_agents_for_round(

@@ -1174,8 +1174,7 @@ Return the sub-questions as a JSON list."""
             if not api_result.get("success", False):
                 error_msg = api_result.get("error", "Unknown error")
                 logger.warning(f"Interview API call failed: {error_msg}")
-                result.summary = f"Interview API call failed: {error_msg}. Please check the OASIS simulation environment status."
-                return result
+                raise ValueError(error_msg)
 
             # Step 5: Parse API response
             api_data = api_result.get("result", {})
@@ -1237,9 +1236,56 @@ Return the sub-questions as a JSON list."""
             result.interviewed_count = len(result.interviews)
 
         except ValueError as e:
-            logger.warning(f"Interview API call failed (environment not running?): {e}")
-            result.summary = f"Interview failed: {str(e)}. The simulation environment may be closed. Please ensure the OASIS environment is running."
-            return result
+            logger.warning(f"Interview API call failed (environment not running?): {e}. Initiating Offline Fallback...")
+            for i, agent_idx in enumerate(selected_indices):
+                agent = selected_agents[i]
+                agent_name = agent.get("realname", agent.get("username", f"Agent_{agent_idx}"))
+                agent_role = agent.get("profession", "Unknown")
+                agent_bio = agent.get("bio", "")
+                
+                try:
+                    messages = [
+                        {"role": "system", "content": f"Vžijte se do role tohoto občana:\n{json.dumps(agent, ensure_ascii=False, indent=2)}\n\nOdpovídejte přirozeně, za sebe a v první osobě. Jste na sociální síti a odpovídáte na dotaz nebo komentujete událost."},
+                        {"role": "user", "content": optimized_prompt}
+                    ]
+                    
+                    fallback_response = self.llm.chat(messages=messages, temperature=0.8)
+                    
+                    import re
+                    clean_text = re.sub(r'#{1,6}\s+', '', fallback_response)
+                    clean_text = re.sub(r'\{[^}]*tool_name[^}]*\}', '', clean_text)
+                    clean_text = re.sub(r'[*_`|>~\-]{2,}', '', clean_text)
+                    clean_text = re.sub(r'Question\d+[：:]\s*', '', clean_text)
+                    clean_text = re.sub(r'【[^】]+】', '', clean_text)
+
+                    sentences = re.split(r'[。！？]', clean_text)
+                    meaningful = [
+                        s.strip() for s in sentences
+                        if 20 <= len(s.strip()) <= 150
+                        and not re.match(r'^[\s\W，,；;：:、]+', s.strip())
+                        and not s.strip().startswith(('{', 'Question'))
+                    ]
+                    meaningful.sort(key=len, reverse=True)
+                    key_quotes = [s + "。" for s in meaningful[:3]]
+
+                    if not key_quotes:
+                        paired = re.findall(r'\u201c([^\u201c\u201d]{15,100})\u201d', clean_text)
+                        paired += re.findall(r'\u300c([^\u300c\u300d]{15,100})\u300d', clean_text)
+                        key_quotes = [q for q in paired if not re.match(r'^[，,；;：:、]', q)][:3]
+
+                    interview = AgentInterview(
+                        agent_name=agent_name,
+                        agent_role=agent_role,
+                        agent_bio=agent_bio[:1000],
+                        question=combined_prompt,
+                        response=f"[Offline Fallback Response]\n{fallback_response}",
+                        key_quotes=key_quotes[:5]
+                    )
+                    result.interviews.append(interview)
+                except Exception as ex:
+                    logger.error(f"Fallback LLM failed for {agent_name}: {ex}")
+            
+            result.interviewed_count = len(result.interviews)
         except Exception as e:
             logger.error(f"Interview API call exception: {e}")
             import traceback

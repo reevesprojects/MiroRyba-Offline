@@ -44,6 +44,3 @@ convention = "google"
 minversion = "7.0"
 addopts = "-ra -q --strict-markers"
 testpaths = ["tests"]
-
-[tool.setuptools.packages.find]
-where = ["src"]

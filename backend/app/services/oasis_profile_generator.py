@@ -644,7 +644,7 @@ Context Information:
 Please generate JSON containing the following fields:
 
 1. bio: Social media bio, 200 characters
-2. persona: Detailed persona description (2000 words of pure text), must include:
+2. persona: Detailed persona description (150 words of pure text), must include:
    - Basic information (age, profession, educational background, location)
    - Personal background (important experiences, event associations, social relationships)
    - Personality traits (MBTI type, core personality, emotional expression)
@@ -693,7 +693,7 @@ Context Information:
 Please generate JSON containing the following fields:
 
 1. bio: Official account bio, 200 characters, professional and appropriate
-2. persona: Detailed account profile description (2000 words of pure text), must include:
+2. persona: Detailed account profile description (150 words of pure text), must include:
    - Basic institutional information (official name, organizational nature, founding background, main functions)
    - Account positioning (account type, target audience, core functions)
    - Speaking style (language characteristics, common expressions, taboo topics)

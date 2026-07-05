@@ -1,0 +1,12 @@
+[
+  {
+    "persona_id": "Ústecký_kraj_0",
+    "response": "[Simulovaná odpověď pro Ústecký_kraj_0]: Tohle je naprosto nepřijatelné, dotkne se to naší rodiny.",
+    "raw_prompt_length": 1286
+  },
+  {
+    "persona_id": "Praha_1",
+    "response": "[Simulovaná odpověď pro Praha_1]: Tohle je naprosto nepřijatelné, dotkne se to naší rodiny.",
+    "raw_prompt_length": 1251
+  }
+]
