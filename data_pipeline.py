@@ -290,7 +290,7 @@ def main() -> None:
     
     # Generate the requested personas
     registry = []
-    region_counter = Counter()  # Fulfilling the collections.Counter requirement
+    region_counter = Counter()  # Track the number of generated personas per region
     
     for region in args.regions:
         profile = generate_regional_profile(region, region_mapping, population_map)

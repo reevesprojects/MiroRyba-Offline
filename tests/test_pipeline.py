@@ -7,8 +7,8 @@ def test_process_geographic_mapping_empty():
     empty_df = pd.DataFrame()
     result = process_geographic_mapping(empty_df, empty_df, empty_df, empty_df)
     
-    assert "Praha" in result
-    assert result["Praha"]["winning_party"] == "SPOLU"
+    assert "Hlavní město Praha" in result
+    assert result["Hlavní město Praha"]["winning_party"] == "SPOLU"
 
 
 def test_generate_regional_profile_opposition():
@@ -17,7 +17,7 @@ def test_generate_regional_profile_opposition():
         "Ústecký kraj": {"winning_party": "ANO"}
     }
     
-    profile = generate_regional_profile("Ústecký kraj", mock_mapping)
+    profile = generate_regional_profile("Ústecký kraj", mock_mapping, {})
     
     assert profile["region_typ"] == "Ústecký kraj"
     assert "inflac" in profile["hlavni_zajem"].lower()
@@ -30,7 +30,7 @@ def test_generate_regional_profile_coalition():
         "Praha": {"winning_party": "SPOLU"}
     }
     
-    profile = generate_regional_profile("Praha", mock_mapping)
+    profile = generate_regional_profile("Praha", mock_mapping, {})
     
     assert profile["region_typ"] == "Praha"
     assert "demokratických" in profile["hlavni_zajem"].lower()

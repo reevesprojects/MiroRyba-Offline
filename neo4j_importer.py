@@ -3,7 +3,7 @@ import json
 import logging
 import random
 from pathlib import Path
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Tuple, Callable
 
 from neo4j import GraphDatabase
 from faker import Faker
@@ -110,7 +110,7 @@ def distribute_proportionally(total_agents: int, items: List[Dict[str, Any]]) ->
     return allocations
 
 
-def get_ideology_sampler(election_data: Dict[str, Dict[str, int]]):
+def get_ideology_sampler(election_data: Dict[str, Dict[str, int]]) -> Callable[[str, int, str, str], str]:
     """
     Returns a closure that samples political ideology based on exact 2025 election data
     modified by sociological demographic curves.
